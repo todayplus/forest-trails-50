@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light" data-accent="forest">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>명품숲길 50선 · 산림청 국토녹화 50주년</title>
+<meta name="description" content="산림청 국토녹화 50주년 기념 명품숲길 50선을 지역·레벨·길이로 찾아보고 즐겨찾기와 완주 기록을 남겨보세요.">
+<meta name="theme-color" content="#1f5c3f">
+<meta property="og:title" content="명품숲길 50선">
+<meta property="og:description" content="산림청 국토녹화 50주년 명품숲길 50선 검색·즐겨찾기·완주 기록">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="숲길 50선">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ---------- 테마 변수 ---------- */
+:root{
+  --radius:16px; --radius-sm:10px;
+  --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.18);
+}
+[data-accent="forest"]{--a:#1f6b47;--a2:#2f8a5e;--a-soft:#e3f1e9;--a-ink:#0f3d28;--hero1:#1f5c3f;--hero2:#3c8a5f}
+[data-accent="maple"]{--a:#b4532a;--a2:#d0703f;--a-soft:#f8e8de;--a-ink:#5c2410;--hero1:#9a3f1f;--hero2:#d08a3f}
+[data-accent="lake"]{--a:#1d6a86;--a2:#2c8bad;--a-soft:#e0f0f6;--a-ink:#0c3646;--hero1:#164f66;--hero2:#3291a8}
+[data-accent="blossom"]{--a:#b0416e;--a2:#cd6590;--a-soft:#f9e5ee;--a-ink:#561a34;--hero1:#93355c;--hero2:#d2789d}
+[data-theme="light"]{
+  --bg:#f6f5f0;--surface:#ffffff;--surface2:#f0efe8;--line:#e3e1d8;--ink:#1d211e;--ink2:#545b56;--ink3:#8a918b;
+  --star:#e0a100;--done:#1f8a5b;--mark:#fff1a8;
+}
+[data-theme="dark"]{
+  --bg:#121513;--surface:#1b1f1c;--surface2:#232825;--line:#2f3631;--ink:#eef1ee;--ink2:#b3bbb5;--ink3:#7d867f;
+  --star:#f4c430;--done:#4cc38a;--mark:#5a4b00;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+}
+[data-theme="dark"][data-accent="forest"]{--a:#5fc28f;--a2:#7dd3a6;--a-soft:#1f3328;--a-ink:#c9efd9}
+[data-theme="dark"][data-accent="maple"]{--a:#f08a5d;--a2:#f5a37f;--a-soft:#3a251b;--a-ink:#fbd9c8}
+[data-theme="dark"][data-accent="lake"]{--a:#5cc0e2;--a2:#83d1ec;--a-soft:#17303a;--a-ink:#cdeef9}
+[data-theme="dark"][data-accent="blossom"]{--a:#ee86b0;--a2:#f3a4c4;--a-soft:#3a1f2b;--a-ink:#fbd6e5}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:140px}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px;
+  -webkit-font-smoothing:antialiased;transition:background .25s,color .25s}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+a{color:var(--a)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:2px solid var(--a);outline-offset:2px;border-radius:6px}
+
+/* ---------- 헤더/히어로 ---------- */
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -60px -10%;height:140px;
+  background:radial-gradient(60% 100% at 20% 100%,rgba(255,255,255,.12),transparent 70%),radial-gradient(50% 100% at 80% 100%,rgba(0,0,0,.12),transparent 70%)}
+.topbar{display:flex;align-items:center;gap:12px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.01em;flex:1;min-width:0}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.16);display:grid;place-items:center}
+.icon-btn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:inherit;transition:background .15s}
+.hero .icon-btn:hover{background:rgba(255,255,255,.14)}
+.hero-body{padding:18px 0 30px;position:relative;z-index:1}
+.eyebrow{font-size:13px;opacity:.85;letter-spacing:.02em}
+.hero h1{margin:6px 0 4px;font-size:clamp(26px,4.4vw,40px);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+.hero p{margin:0;opacity:.9;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:22px}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 14px;backdrop-filter:blur(6px)}
+.stat b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:12.5px;opacity:.85}
+.progress{height:6px;background:rgba(255,255,255,.22);border-radius:99px;margin-top:8px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:#fff;border-radius:99px;transition:width .5s}
+
+/* ---------- 툴바 ---------- */
+.toolbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.tb-row{display:flex;gap:10px;align-items:center;padding:12px 0}
+.search{flex:1;position:relative;display:flex;align-items:center}
+.search svg{position:absolute;left:14px;color:var(--ink3);pointer-events:none}
+.search input{width:100%;height:46px;border-radius:14px;border:1px solid var(--line);background:var(--surface);
+  padding:0 78px 0 44px;font-size:15.5px;outline:none;transition:border-color .15s,box-shadow .15s}
+.search input:focus{border-color:var(--a);box-shadow:0 0 0 4px color-mix(in srgb,var(--a) 18%,transparent)}
+.search .kbd{position:absolute;right:12px;font-size:12px;color:var(--ink3);border:1px solid var(--line);border-radius:6px;padding:1px 7px;background:var(--surface2)}
+.search .clear{position:absolute;right:8px;width:32px;height:32px;border-radius:10px;display:none;place-items:center;color:var(--ink3)}
+.search.has .clear{display:grid}.search.has .kbd{display:none}
+.btn{height:46px;padding:0 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:inline-flex;align-items:center;gap:7px;
+  font-weight:600;font-size:14.5px;white-space:nowrap;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--a)}
+.btn .dot{min-width:20px;height:20px;border-radius:99px;background:var(--a);color:var(--surface);font-size:12px;display:none;place-items:center;padding:0 6px}
+.btn .dot.on{display:inline-grid}
+.tabs{display:flex;gap:6px;padding:0 0 12px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{height:36px;padding:0 14px;border-radius:99px;font-weight:600;font-size:14px;color:var(--ink2);background:transparent;border:1px solid transparent;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.tab:hover{background:var(--surface2)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.tab small{font-weight:500;opacity:.7}
+
+.filters{display:none;padding:4px 0 14px;gap:12px;flex-direction:column}
+.filters.open{display:flex}
+.f-row{display:flex;gap:10px;align-items:flex-start}
+.f-label{flex:none;width:52px;font-size:13px;font-weight:700;color:var(--ink3);padding-top:7px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{height:32px;padding:0 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;gap:5px;transition:all .15s}
+.chip:hover{border-color:var(--a)}
+.chip small{color:var(--ink3);font-size:12px}
+.chip[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:var(--surface)}
+.chip[aria-pressed="true"] small{color:inherit;opacity:.8}
+.f-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+select.sel{height:34px;border-radius:10px;border:1px solid var(--line);background:var(--surface);padding:0 10px;font-size:13.5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{height:32px;width:38px;display:grid;place-items:center;color:var(--ink3)}
+.seg button[aria-pressed="true"]{background:var(--a-soft);color:var(--a)}
+.linkbtn{font-size:13.5px;color:var(--a);font-weight:600;padding:6px 4px}
+
+/* ---------- 결과 ---------- */
+main{padding:18px 0 60px}
+.result-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;color:var(--ink2);font-size:14px}
+.result-bar b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 12px;display:flex;flex-direction:column;gap:8px;
+  box-shadow:var(--shadow);transition:transform .18s,border-color .18s,box-shadow .18s;cursor:pointer;position:relative;animation:in .35s both}
+.card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--a) 50%,var(--line))}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card.done{background:linear-gradient(0deg,color-mix(in srgb,var(--done) 6%,var(--surface)),var(--surface))}
+.meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2)}
+.tag{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px;border-radius:99px;background:var(--surface2);font-weight:600}
+.tag.reg{background:var(--a-soft);color:var(--a-ink)}
+.tag.ok{background:color-mix(in srgb,var(--done) 16%,transparent);color:var(--done)}
+.lv{display:inline-flex;gap:3px;align-items:center}
+.lv i{width:7px;height:7px;border-radius:2px;background:var(--line)}
+.lv i.on{background:var(--a)}
+.card h3{margin:2px 0 0;font-size:18px;line-height:1.35;letter-spacing:-.015em;font-weight:750;padding-right:34px}
+.card .meta{padding-right:32px}
+.card .sub{font-size:13.5px;color:var(--ink2);margin-top:-4px}
+.card .desc{font-size:14px;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.card .addr{font-size:12.5px;color:var(--ink3);display:flex;gap:5px;align-items:flex-start}
+.card .addr svg{width:14px;height:14px;margin-top:2px}
+.card .acts{display:flex;gap:4px;margin-top:auto;padding-top:6px;border-top:1px dashed var(--line)}
+.act{height:34px;padding:0 10px;border-radius:10px;display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--ink2)}
+.act:hover{background:var(--surface2);color:var(--ink)}
+.act svg{width:17px;height:17px}
+.act.fav[aria-pressed="true"]{color:var(--star)}
+.act.fav[aria-pressed="true"] svg{fill:var(--star)}
+.act.vis[aria-pressed="true"]{color:var(--done)}
+.act.map{margin-left:auto;color:var(--a)}
+.star-corner{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--ink3)}
+.star-corner:hover{background:var(--surface2)}
+.star-corner[aria-pressed="true"]{color:var(--star)}
+.star-corner[aria-pressed="true"] svg{fill:var(--star)}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
+
+/* 리스트 보기 */
+.grid.list{grid-template-columns:1fr;gap:8px}
+.grid.list .card{flex-direction:row;align-items:center;padding:12px 14px;gap:14px}
+.grid.list .card .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.grid.list .card h3{font-size:16px;padding:0}
+.grid.list .card .desc,.grid.list .card .addr,.grid.list .card .tagrow{display:none}
+.grid.list .card .acts{margin:0;padding:0;border:0}
+.grid.list .card .act span{display:none}
+.grid.list .star-corner{position:static;order:3}
+.card .body{display:contents}
+.grid.list .card .body{display:flex}
+.num{font-variant-numeric:tabular-nums}
+
+.empty{text-align:center;padding:60px 20px;color:var(--ink2)}
+.empty svg{width:48px;height:48px;color:var(--ink3);margin-bottom:8px}
+
+/* ---------- 모달 ---------- */
+.overlay{position:fixed;inset:0;background:rgba(10,14,12,.5);z-index:50;display:none;align-items:center;justify-content:center;padding:20px;animation:fade .2s}
+.overlay.open{display:flex}
+@keyframes fade{from{opacity:0}}
+.sheet{background:var(--surface);border-radius:22px;width:min(680px,100%);max-height:min(88vh,860px);overflow:auto;box-shadow:var(--shadow-lg);animation:pop .25s cubic-bezier(.2,.9,.3,1.2);overscroll-behavior:contain}
+@keyframes pop{from{transform:translateY(16px) scale(.98);opacity:0}}
+.sheet-head{position:sticky;top:0;background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:20px 22px 18px;z-index:1}
+.sheet-head .meta{color:rgba(255,255,255,.9)}
+.sheet-head .tag{background:rgba(255,255,255,.18);color:#fff}
+.sheet-head .lv i{background:rgba(255,255,255,.3)}.sheet-head .lv i.on{background:#fff}
+.sheet-head h2{margin:8px 0 2px;font-size:24px;line-height:1.3;letter-spacing:-.02em;padding-right:44px}
+.sheet-head .sub{opacity:.9;font-size:14.5px}
+.sheet-head .close{position:absolute;top:12px;right:12px;color:#fff}
+.sheet-head .close:hover{background:rgba(255,255,255,.15)}
+.grabber{display:none}
+.sheet-body{padding:18px 22px 24px;display:flex;flex-direction:column;gap:18px}
+.sheet-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sa{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;border-radius:12px;background:var(--surface2);font-size:12.5px;font-weight:600;color:var(--ink2);border:1px solid transparent}
+.sa:hover{border-color:var(--a)}
+.sa[aria-pressed="true"].fav{color:var(--star)}.sa[aria-pressed="true"].fav svg{fill:var(--star)}
+.sa[aria-pressed="true"].vis{color:var(--done);background:color-mix(in srgb,var(--done) 12%,var(--surface2))}
+.sec h4{margin:0 0 8px;font-size:13px;color:var(--ink3);font-weight:700;letter-spacing:.02em}
+.sec p{margin:0;font-size:15px;line-height:1.75;word-break:keep-all}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.fact-note{font-size:12px;color:var(--ink3);margin-top:6px}
+.fact{background:var(--surface2);border-radius:12px;padding:10px 12px}
+.fact span{display:block;font-size:12px;color:var(--ink3)}
+.fact b{font-size:16px}
+.linklist{display:flex;flex-direction:column;gap:6px}
+.lk{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:14px}
+.lk:hover{border-color:var(--a);background:var(--a-soft)}
+.lk svg{color:var(--a)}
+.lk span{flex:1;min-width:0}
+.lk small{display:block;color:var(--ink3);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.addr-list{display:flex;flex-direction:column;gap:6px}
+.addr-item{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;padding:10px 12px;background:var(--surface2);border-radius:12px}
+.addr-item span{flex:1;word-break:keep-all}
+.mini{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:var(--a);padding:4px 8px;border-radius:8px;white-space:nowrap}
+.mini:hover{background:var(--a-soft)}
+.mini svg{width:14px;height:14px}
+.map-quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+textarea.memo{width:100%;min-height:84px;border-radius:12px;border:1px solid var(--line);background:var(--surface);padding:10px 12px;font-size:14.5px;resize:vertical;outline:none}
+textarea.memo:focus{border-color:var(--a)}
+.memo-hint{font-size:12px;color:var(--ink3);margin-top:4px}
+.nav-row{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+.nav-row .btn{height:40px;font-size:13.5px}
+
+/* ---------- 팝오버 (테마/설정) ---------- */
+.pop{position:fixed;z-index:60;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);padding:14px;width:280px;display:none;animation:pop .18s}
+.pop.open{display:block}
+.pop h5{margin:0 0 8px;font-size:12.5px;color:var(--ink3)}
+.pop .seg{width:100%;margin-bottom:14px}
+.pop .seg button{flex:1;width:auto;font-size:13px;gap:5px;display:flex;align-items:center;justify-content:center;height:36px}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sw{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:12px;color:var(--ink2);padding:6px 0;border-radius:10px;border:1px solid transparent}
+.sw i{width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.sw[aria-pressed="true"]{border-color:var(--a);color:var(--ink)}
+.menu-item{display:flex;align-items:center;gap:10px;width:100%;padding:10px;border-radius:10px;font-size:14px;text-align:left}
+.menu-item:hover{background:var(--surface2)}
+.menu-item.danger{color:#c43c3c}
+.pop hr{border:0;border-top:1px solid var(--line);margin:6px 0}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:12px;font-size:14px;
+  opacity:0;pointer-events:none;transition:all .25s;z-index:80;max-width:calc(100% - 40px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.has-ib .fab{bottom:calc(92px + env(safe-area-inset-bottom))}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:46px;height:46px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;z-index:15;opacity:0;pointer-events:none;transition:opacity .2s}
+.fab.show{opacity:1;pointer-events:auto}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--ink3);font-size:13px}
+footer p{margin:4px 0}
+
+/* ---------- 지도 ---------- */
+.mapwrap{position:relative;isolation:isolate;z-index:0;display:none;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface2)}
+.mapwrap.on{display:block}
+#map{height:calc(100vh - 230px);min-height:420px;width:100%}
+.map-ctrl{position:absolute;top:12px;right:12px;z-index:500;display:flex;flex-direction:column;gap:6px}
+.map-ctrl .btn{height:40px;font-size:13.5px;box-shadow:var(--shadow)}
+.map-legend{position:absolute;left:12px;bottom:12px;z-index:500;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:12px;color:var(--ink2);display:flex;gap:10px;align-items:center;box-shadow:var(--shadow);flex-wrap:wrap;max-width:calc(100% - 24px)}
+.map-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+.pin{width:30px;height:38px;position:relative;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+.pin b{position:absolute;inset:0 0 8px 0;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pc,#1f6b47);border:2px solid #fff}
+.pin span{position:absolute;top:5px;left:0;right:0;text-align:center;color:#fff;font-weight:800;font-size:12px;font-family:var(--font)}
+.pin.fav::after{content:"★";position:absolute;top:-8px;right:-6px;color:#f4c430;font-size:15px;text-shadow:0 0 2px #000}
+.pin.done b{background:#8a918b}
+.pin.approx b{border-style:dashed}
+.me-dot{width:18px;height:18px;border-radius:50%;background:#2b7cff;border:3px solid #fff;box-shadow:0 0 0 6px rgba(43,124,255,.25)}
+.leaflet-container{font-family:var(--font);background:var(--surface2)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink)}
+.leaflet-popup-content{margin:12px 14px;min-width:190px}
+.pp h6{margin:0 0 2px;font-size:15px;font-weight:750}
+.pp .m{font-size:12.5px;color:var(--ink2);margin-bottom:8px}
+.pp button{height:32px;padding:0 12px;border-radius:9px;background:var(--a);color:var(--surface);font-weight:700;font-size:13px}
+.pp .ap{font-size:11.5px;color:var(--ink3);margin-top:6px}
+.mini-map{isolation:isolate;position:relative;z-index:0;height:200px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface2)}
+.geo-note{font-size:12px;color:var(--ink3);margin-top:6px}
+
+/* ---------- 날씨 ---------- */
+.wx-now{display:flex;align-items:center;gap:12px;background:var(--a-soft);color:var(--a-ink);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.wx-now .e{font-size:34px;line-height:1}
+.wx-now b{font-size:22px}
+.wx-now small{display:block;font-size:12.5px;opacity:.85}
+.wx-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.wx-d{background:var(--surface2);border-radius:10px;padding:8px 2px;text-align:center;font-size:12px;line-height:1.35}
+.wx-d .e{font-size:20px;display:block;margin:2px 0}
+.wx-d.we{background:color-mix(in srgb,var(--a) 12%,var(--surface2));outline:1px solid color-mix(in srgb,var(--a) 35%,transparent)}
+.wx-d .dn{font-weight:700}
+.wx-d .hi{font-weight:700;color:var(--ink)}.wx-d .lo{color:var(--ink3)}
+.wx-d .pr{color:#2b7cff;font-size:11px}
+.wx-msg{font-size:13.5px;color:var(--ink2);padding:12px;background:var(--surface2);border-radius:12px}
+.skel{background:linear-gradient(90deg,var(--surface2),var(--line),var(--surface2));background-size:200% 100%;animation:sk 1.2s infinite;border-radius:12px;height:120px}
+@keyframes sk{to{background-position:-200% 0}}
+
+/* ---------- 편의 정보 ---------- */
+.amen{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.am{background:var(--surface2);border-radius:12px;padding:10px 12px;font-size:13px}
+.am .h{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:4px}
+.am .st{font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--line);color:var(--ink2)}
+.am .st.n{background:color-mix(in srgb,#e0a100 20%,transparent);color:#8a6200}
+.am .st.y{background:color-mix(in srgb,var(--done) 18%,transparent);color:var(--done)}
+.am p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.5}
+.tagrow{display:flex;gap:5px;flex-wrap:wrap}
+.tg{font-size:12px;padding:3px 9px;border-radius:99px;background:var(--a-soft);color:var(--a-ink);font-weight:600}
+.card .tagrow .tg{font-size:11.5px;padding:2px 8px;background:var(--surface2);color:var(--ink2)}
+.card .tagrow .tg.fc{background:var(--a-soft);color:var(--a-ink)}
+.card .tagrow .tg.warn{background:color-mix(in srgb,#e0a100 18%,transparent);color:#8a6200}
+[data-theme="dark"] .card .tagrow .tg.warn{color:#f4c430}
+.notice{display:flex;gap:10px;background:color-mix(in srgb,#e0a100 14%,var(--surface));border:1px solid color-mix(in srgb,#e0a100 40%,transparent);border-radius:12px;padding:10px 12px;font-size:14px}
+.notice b{display:block;font-size:12.5px;color:#8a6200;margin-bottom:2px}
+[data-theme="dark"] .notice b{color:#f4c430}
+.src{font-size:11.5px;color:var(--ink3);margin-left:4px;white-space:nowrap}
+.src a{color:var(--ink3)}
+.am p+p{margin-top:6px}
+.start-box{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin-top:8px;background:var(--surface2);border-radius:12px;padding:10px 12px}
+.start-box span{flex:1}
+.tag.dist{background:color-mix(in srgb,#2b7cff 14%,transparent);color:#2b7cff}
+[data-theme="dark"] .tag.dist{color:#7fb0ff}
+
+/* ---------- 앱 설치 ---------- */
+.install-bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45;display:flex;align-items:center;gap:12px;
+  background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:10px 10px 10px 12px;box-shadow:var(--shadow-lg);animation:up .3s cubic-bezier(.2,.9,.3,1);max-width:520px;margin:0 auto}
+.install-bar[hidden]{display:none}
+.install-bar img{border-radius:11px;flex:none}
+.ib-t{flex:1;min-width:0;line-height:1.35}
+.ib-t b{display:block;font-size:14.5px}
+.ib-t span{font-size:12.5px;color:var(--ink2)}
+.ib-go{height:38px;padding:0 16px;border-radius:11px;background:var(--a);color:var(--surface);font-weight:700;font-size:14px;flex:none}
+.ib-x{width:34px;height:34px;color:var(--ink3);flex:none}
+@keyframes up{from{transform:translateY(40%);opacity:0}}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;counter-reset:st}
+.steps li{display:flex;gap:12px;align-items:center;background:var(--surface2);border-radius:14px;padding:12px 14px;font-size:15px;counter-increment:st}
+.steps li::before{content:counter(st);flex:none;width:26px;height:26px;border-radius:50%;background:var(--a);color:var(--surface);display:grid;place-items:center;font-weight:800;font-size:13px}
+.steps li svg{flex:none;color:var(--a);width:24px;height:24px}
+.steps li span{flex:1}
+.guide-note{font-size:13px;color:var(--ink2);background:var(--a-soft);color:var(--a-ink);border-radius:12px;padding:10px 12px}
+.update-bar{position:fixed;left:50%;transform:translateX(-50%);top:calc(12px + env(safe-area-inset-top));z-index:85;background:var(--ink);color:var(--bg);border-radius:12px;padding:8px 8px 8px 14px;display:flex;gap:10px;align-items:center;font-size:14px;box-shadow:var(--shadow-lg)}
+.update-bar button{height:32px;padding:0 12px;border-radius:9px;background:var(--a2);color:#fff;font-weight:700;font-size:13px}
+@media (display-mode:standalone){ .hero .topbar{padding-top:calc(14px + env(safe-area-inset-top))} }
+
+/* ---------- 반응형 ---------- */
+@media (max-width:899px){ .toolbar.fopen{position:relative} }
+@media (min-width:900px){
+  .filters{display:flex}
+  #filterBtn,#mapToggle{display:none}
+}
+@media (max-width:720px){
+  .wrap{padding:0 14px}
+  .hero-body{padding:8px 0 22px}
+  .grid{grid-template-columns:1fr;gap:10px}
+  .f-row{flex-direction:column;gap:6px}
+  .f-label{padding:0;width:auto}
+  .chips.scroll{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px 2px;width:calc(100% + 28px)}
+  .chips.scroll::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .search .kbd{display:none}
+  #filterBtn .lbl,#mapToggle .lbl{display:none}
+  #mapToggle[aria-pressed="true"]{background:var(--a-soft);border-color:var(--a);color:var(--a)}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:16px}
+  .stat{padding:9px 10px;border-radius:12px}
+  .stat b{font-size:17px}
+  .stat span{font-size:11.5px}
+  .hero p{font-size:14px}
+  .hero h1{margin-top:4px}
+  .overlay{padding:0;align-items:flex-end}
+  .sheet{border-radius:22px 22px 0 0;max-height:92vh;width:100%;animation:up .28s cubic-bezier(.2,.9,.3,1)}
+  @keyframes up{from{transform:translateY(40%)}}
+  .grabber{display:block;width:40px;height:5px;border-radius:9px;background:rgba(255,255,255,.5);margin:-8px auto 10px}
+  .sheet-body{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  .sheet-head h2{font-size:21px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .amen{grid-template-columns:1fr}
+  #map{height:calc(100vh - 200px);min-height:360px}
+  .mapwrap{margin:0 -14px;border-radius:0;border-left:0;border-right:0}
+  .wx-d{font-size:11px}.wx-d .e{font-size:17px}
+  .brand .t2{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.mapwrap,.toolbar,.hero .topbar,.acts,.star-corner,.fab,footer{display:none}.card{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.7 2.7L16 9.8"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5C21 6.4 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"/><circle cx="12" cy="12" r="1.1" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="18.5" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 10.8 7.6-4.1M8.2 13.2l7.6 4.1"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-auto" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-mapview" viewBox="0 0 24 24"><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-locate" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-install" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 7v7M9 11l3 3 3-3M10 18.5h4"/></symbol>
+  <symbol id="i-iosshare" viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M7 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1"/></symbol>
+  <symbol id="i-plussq" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4M7 9l5-5 5 5M5 20h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 3 6 11h3l-4 6h14l-4-6h3z"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="6" rx="1"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="brand-mark"><svg class="i"><use href="#i-tree"/></svg></span><span>명품숲길 50선 <span class="t2" style="font-weight:500;opacity:.75">· 탐방 가이드</span></span></div>
+      <button class="icon-btn" id="installBtn" title="앱으로 설치" aria-label="앱으로 설치" hidden><svg class="i"><use href="#i-install"/></svg></button>
+      <button class="icon-btn" id="randomBtn" title="오늘의 숲길 추천" aria-label="랜덤 숲길 추천"><svg class="i"><use href="#i-dice"/></svg></button>
+      <button class="icon-btn" id="themeBtn" title="테마 변경" aria-label="테마 변경" aria-haspopup="true"><svg class="i"><use href="#i-palette"/></svg></button>
+      <button class="icon-btn" id="moreBtn" title="더보기" aria-label="더보기 메뉴" aria-haspopup="true"><svg class="i"><use href="#i-more"/></svg></button>
+    </div>
+    <div class="hero-body">
+      <div class="eyebrow">2023 산림청 국토녹화 50주년 기념</div>
+      <h1>걷고 싶은 명품숲길 50선</h1>
+      <p>지역·레벨·테마로 찾고 지도·날씨까지 확인한 뒤, 가고 싶은 곳은 즐겨찾기, 다녀온 곳은 완주 체크해 보세요.</p>
+      <div class="stats">
+        <div class="stat"><b class="num" id="stTotal">50</b><span>숲길</span></div>
+        <div class="stat"><b class="num" id="stRegion">15</b><span>개 시·도</span></div>
+        <div class="stat"><b class="num" id="stKm">0</b><span>km 총 길이</span></div>
+        <div class="stat"><b class="num" id="stDone">0 / 50</b><span>나의 완주</span><div class="progress"><i id="stBar"></i></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <div class="tb-row">
+      <label class="search" id="searchBox">
+        <span class="sr">숲길 검색</span>
+        <svg class="i"><use href="#i-search"/></svg>
+        <input id="q" type="search" placeholder="숲길명·지역·주소·설명 검색 (초성도 OK: ㅅㄹㄴ)" autocomplete="off" enterkeyhint="search">
+        <span class="kbd">/</span>
+        <button class="clear" id="qClear" type="button" aria-label="검색어 지우기"><svg class="i"><use href="#i-x"/></svg></button>
+      </label>
+      <button class="btn" id="mapToggle" aria-pressed="false" title="지도 보기"><svg class="i"><use href="#i-mapview"/></svg><span class="lbl">지도</span></button>
+      <button class="btn" id="filterBtn" aria-expanded="false" aria-controls="filters"><svg class="i"><use href="#i-filter"/></svg><span class="lbl">필터</span><span class="dot" id="filterDot"></span></button>
+    </div>
+    <div class="tabs" role="group" aria-label="보기 범위">
+      <button class="tab" data-tab="all" aria-pressed="true">전체 <small id="cAll"></small></button>
+      <button class="tab" data-tab="fav" aria-pressed="false">★ 즐겨찾기 <small id="cFav"></small></button>
+      <button class="tab" data-tab="done" aria-pressed="false">✓ 다녀온 곳 <small id="cDone"></small></button>
+      <button class="tab" data-tab="todo" aria-pressed="false">안 가본 곳 <small id="cTodo"></small></button>
+    </div>
+    <div class="filters" id="filters">
+      <div class="f-row"><div class="f-label">지역</div><div class="chips scroll" id="fRegion"></div></div>
+      <div class="f-row"><div class="f-label">레벨</div><div class="chips scroll" id="fLevel"></div></div>
+      <div class="f-row"><div class="f-label">길이</div><div class="chips scroll" id="fLen"></div></div>
+      <div class="f-row"><div class="f-label">테마</div><div class="chips scroll" id="fTag"></div></div>
+      <div class="f-row"><div class="f-label">정렬</div>
+        <div class="f-tools">
+          <select class="sel" id="sort" aria-label="정렬">
+            <option value="default">기본 순서</option>
+            <option value="name">이름순 (가나다)</option>
+            <option value="kmAsc">짧은 길부터</option>
+            <option value="kmDesc">긴 길부터</option>
+            <option value="lvAsc">쉬운 길부터</option>
+            <option value="lvDesc">어려운 길부터</option>
+            <option value="timeAsc">소요시간 짧은 순</option>
+            <option value="near">📍 내 위치에서 가까운 순</option>
+            <option value="region">지역순</option>
+          </select>
+          <div class="seg" role="group" aria-label="보기 방식">
+            <button data-view="grid" aria-pressed="true" title="카드 보기"><svg class="i"><use href="#i-grid"/></svg></button>
+            <button data-view="list" aria-pressed="false" title="목록 보기"><svg class="i"><use href="#i-list"/></svg></button>
+            <button data-view="map" aria-pressed="false" title="지도 보기"><svg class="i"><use href="#i-mapview"/></svg></button>
+          </div>
+          <button class="linkbtn" id="resetBtn">필터 초기화</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="result-bar"><div id="resultText"></div><div id="activeFilters"></div></div>
+  <div class="mapwrap" id="mapWrap">
+    <div id="map" role="region" aria-label="숲길 지도"></div>
+    <div class="map-ctrl"><button class="btn" id="mapLocate"><svg class="i"><use href="#i-locate"/></svg>내 위치</button><button class="btn" id="mapFit">전체 보기</button></div>
+    <div class="map-legend"><span>핀 숫자 = 이용자레벨</span><span><i style="background:#8a918b"></i>완주</span><span>★ 즐겨찾기</span><span>점선 테두리 = 대략 위치</span></div>
+  </div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>자료: 산림청 「2023 국토녹화 50주년 명품숲길 50선」 · 지도 링크는 원자료(네이버 지도 등)를 그대로 사용합니다.</p>
+    <p>지도 위치는 원자료 링크 좌표(4곳) 또는 주소 기준 대략 위치이며, 날씨는 Open-Meteo 예보(해당 위치 기준)입니다. 예상 소요시간은 참고용 추정치입니다.</p>
+    <p>즐겨찾기·완주·메모는 이 기기의 브라우저에만 저장됩니다. 다른 기기로 옮기려면 ⋮ 메뉴의 백업 기능을 이용하세요.</p>
+  </div>
+</footer>
+
+<button class="fab" id="topBtn" aria-label="맨 위로"><svg class="i"><use href="#i-up"/></svg></button>
+
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="dTitle" id="sheet"></div>
+</div>
+
+<div class="pop" id="themePop" role="menu" aria-label="테마 설정">
+  <h5>화면 모드</h5>
+  <div class="seg" id="modeSeg">
+    <button data-mode="light"><svg class="i"><use href="#i-sun"/></svg>라이트</button>
+    <button data-mode="dark"><svg class="i"><use href="#i-moon"/></svg>다크</button>
+    <button data-mode="auto"><svg class="i"><use href="#i-auto"/></svg>자동</button>
+  </div>
+  <h5>색상 테마</h5>
+  <div class="swatches" id="accentSw">
+    <button class="sw" data-accent="forest"><i style="background:linear-gradient(135deg,#1f5c3f,#3c8a5f)"></i>숲</button>
+    <button class="sw" data-accent="maple"><i style="background:linear-gradient(135deg,#9a3f1f,#d08a3f)"></i>단풍</button>
+    <button class="sw" data-accent="lake"><i style="background:linear-gradient(135deg,#164f66,#3291a8)"></i>호수</button>
+    <button class="sw" data-accent="blossom"><i style="background:linear-gradient(135deg,#93355c,#d2789d)"></i>벚꽃</button>
+  </div>
+</div>
+
+<div class="pop" id="morePop" role="menu" aria-label="더보기">
+  <button class="menu-item" id="exportBtn"><svg class="i"><use href="#i-down"/></svg>내 기록 백업 (파일 저장)</button>
+  <button class="menu-item" id="importBtn"><svg class="i"><use href="#i-upload"/></svg>백업 파일 불러오기</button>
+  <button class="menu-item" id="installMenu" hidden><svg class="i"><use href="#i-install"/></svg>앱으로 설치하기 (홈 화면)</button>
+  <button class="menu-item" id="shareAppBtn"><svg class="i"><use href="#i-share"/></svg>이 앱 공유하기</button>
+  <button class="menu-item" id="printBtn"><svg class="i"><use href="#i-print"/></svg>현재 목록 인쇄 / PDF</button>
+  <hr>
+  <button class="menu-item danger" id="clearBtn"><svg class="i"><use href="#i-trash"/></svg>내 기록 모두 지우기</button>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+</div>
+
+<div class="install-bar" id="installBar" role="dialog" aria-label="앱 설치 안내" hidden>
+  <img src="apple-touch-icon.png" alt="" width="44" height="44">
+  <div class="ib-t"><b>숲길 50선을 앱으로 설치</b><span>홈 화면에서 바로 열고, 인터넷이 없어도 볼 수 있어요</span></div>
+  <button class="ib-go" id="installBarGo">설치</button>
+  <button class="icon-btn ib-x" id="installBarX" aria-label="닫기"><svg class="i"><use href="#i-x"/></svg></button>
+</div>
+
+<div class="overlay" id="guideOv" aria-hidden="true">
+  <div class="sheet guide" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="sheet-head"><div class="grabber"></div><h2 id="guideTitle">홈 화면에 앱 설치하기</h2><div class="sub" id="guideSub"></div>
+      <button class="icon-btn close" data-guide-close aria-label="닫기"><svg class="i"><use href="#i-x"/></svg></button></div>
+    <div class="sheet-body" id="guideBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script id="trail-data" type="application/json">[{"id": 1, "name": "인제 자작나무숲", "sub": "달맞이숲길", "desc": "인제 자작나무 달맞이 숲길은 메인숲과 인접한 계곡을 따라 걸을 수 있는 숲길로, 큰앵초, 촛대승마, 노루귀 등 여러 종류의 야생화와 다양한 식생을 관찰할 수 있습니다. 달맞이 숲길은 2.3km로 조성된 계곡 코스이며, 돌계단 돌흙막이 등 공법을 사용하여 탐방객이 걷기 편안한 계단 높이와 경사도로 조성되어 탐방객들이 안전한 탐방을 할 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/Fu6L1gQI"}], "level": 2, "km": 5.0, "kmNote": "", "addr": ["강원 인제군 인제읍 원대리 763-4"], "org": "인제국유림관리소", "region": "강원", "lat": 38.00921, "lng": 128.19428, "geo": "sourced", "mins": 110, "parking": [{"t": "자작나무숲 주차장, 소형 5,000원(인제사랑상품권으로 환급)", "src": "https://www.telltrip.com/domestic-travel/inje-wondaeri-birch-forest-may-reopening/"}], "toilet": [{"t": "안내소 일원 남녀 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/1818945"}], "barrierFree": null, "tags": ["계곡"], "notice": [{"t": "월·화 휴무(공휴일 운영), 입산 09~15시(11~3월 14시), 산불조심기간(2.1~5.15, 11.1~12.15) 입산통제", "src": "https://www.telltrip.com/domestic-travel/inje-wondaeri-birch-forest-may-reopening/"}], "start": {"name": "원대리 자작나무숲 안내소(주차장)", "addr": "강원 인제군 인제읍 자작나무숲길 760 (내비: 원대리 763-4)"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/1818945"}, {"id": 2, "name": "선자령 등산로", "sub": "", "desc": "선자령 등산로는 백두대간 마루금의 줄기를 따라 걸을 수 있는 숲길로, 2021년 최초 국가숲길로 지정된 대관령숲길 중 하나인 목장코스입니다. 선자령 등산로 입구에서 능선을 따라 걷다보면 동해가 훤하게 보이는 전망대를 거쳐 선장령에 이르는 코스가 대표적이며, 전망대에서 선자령에 이르는 등산로에는 목장의 초지와 이국적인 풍력발전기를 배경으로 사진기 좋은 장소로 유명합니다. 대관령 숲길 안내센터에서 동행 안내서비스를 받을 수 있으며, 특히 겨울에는 선자령에서 눈꽃산행과, 인근에서 스키장, 리조트, 목장 등 레저 및 관광을 즐길 수 있습니다.", "links": [{"label": "대관령숲길안내센터", "url": "https://naver.me/FyenMAI5"}, {"label": "선자령등산로 입구", "url": "https://naver.me/5GymANp7"}], "level": 3, "km": 8.33, "kmNote": "", "addr": ["(선자령 등산로 입구) 강원 평창군 대관령면 횡계리 14-291"], "org": "평창국유림관리소", "region": "강원", "lat": 37.6885, "lng": 128.753, "geo": "approx", "mins": 210, "parking": [{"t": "대관령마을휴게소(옛 대관령휴게소)·신재생에너지전시관 주차장, 무료", "src": "https://xn--ok0b236bp0a.com/place/29124"}], "toilet": [{"t": "신재생에너지전시관 주차장 인근 화장실", "src": "https://v.daum.net/v/20220914093914431"}], "barrierFree": null, "tags": ["전망", "바다·호수"], "notice": null, "start": {"name": "선자령 등산로 입구(옛 대관령휴게소)", "addr": "강원 평창군 대관령면 횡계리 14-291"}}, {"id": 3, "name": "응봉산 등산로", "sub": "", "desc": "삼척시 응봉산 등산로는 푸른 산과 덕풍계곡의 맑은 물이 어우러진 아름다운 풍경을 가진 숲길입니다. 등산로 입구에서 제1용소를 거쳐 제2용소까지 가는 2.5km의 탐방로가 조성되어 있으며, 계곡 양쪽의 기암절벽과 노송이 어우러진 경치는 그림같습니다.특히, 계곡의 물이 맑고 깨끗하며 자연경관이 뛰어난 여러 개의 폭포가 있어 여름 더위를 식히기에 최적의 장소입니다.", "links": [{"label": "응봉산 산악구조대쉼터", "url": "https://naver.me/FIoFbhZE"}], "level": 4, "km": 2.5, "kmNote": "", "addr": ["강원 삼척시 가곡면 풍곡리 148"], "org": "삼척국유림관리소", "region": "강원", "lat": 37.094, "lng": 129.155, "geo": "approx", "mins": 80, "parking": [{"t": "덕풍마을 주차장 이용", "src": "https://www.ktriptips.com/kor/tourspot/127738"}], "toilet": null, "barrierFree": null, "tags": ["계곡"], "notice": [{"t": "봄(2.15~5.15)·가을(11.1~12.15) 입산통제, 연장될 수 있음", "src": "https://www.ktriptips.com/kor/tourspot/127738"}], "start": {"name": "덕풍마을(응봉산 산악구조대쉼터)", "addr": "강원 삼척시 가곡면 풍곡리 148"}}, {"id": 4, "name": "대관령소나무숲길", "sub": "", "desc": "강릉시 성산면 어흘리 일원에서 백 년에 걸쳐 가꾸고 관리해온 대관령 소나무숲은 축구장 570여 개와 맞먹는 400ha에 이릅니다. 그리고 산림청에서는 2002년에 ‘문화재복원용 목재생산림’으로 지정해 관리하고 있으며, 2017년에는 국유림 명품숲으로 선정되어 그 역사성과 우수성을 인정받았습니다. 생태적으로 건강하고 아름다운 경관자원을 숲길을 걸으며 만끽하세요", "links": [{"label": "강릉걷는길안내센터", "url": "https://naver.me/FwkqXmNW"}], "level": 3, "km": 6.3, "kmNote": "", "addr": ["강릉 성산면 어흘리 508"], "org": "강릉국유림관리소", "region": "강원", "lat": 37.71918, "lng": 128.79605, "geo": "sourced", "mins": 160, "parking": [{"t": "어흘리 주차장, 소형 약 120대, 무료", "src": "https://www.ktriptips.com/kor/leisure/2784104"}], "toilet": null, "barrierFree": null, "tags": ["소나무·금강송", "역사·문화"], "notice": null, "start": {"name": "어흘리 주차장", "addr": "강원 강릉시 성산면 삼포암길 17 (어흘리 508 일원)"}, "geoSrc": "https://www.ktriptips.com/kor/leisure/2784104"}, {"id": 5, "name": "하늘길 둘레길", "sub": "", "desc": "하늘길 둘레길은 하늘길 둘레길은 영월군과 정선군의 폐광지역을 걸으며 우리나라 석탄산업의 흔적을 마주할 수 있는 트레킹코스입니다. 해발 1,000m가 넘는 고지에 위치하며, 테일러스 지형과 도롱이연못, 1177갱 등 다양한 지역 문화와 자연환경을 탐색할 수 있습니다. 그리고 숲길 구간마다 광산촌 이야기, 테일러스 지형안내, 폐갱입구, 화전민 마을 등의 이야기 안내판과 완만한 길로 만들어져 있어 쉽게 걷고 즐길 수 있습니다.", "links": [{"label": "도롱이연못이 위치한 곳", "url": "https://naver.me/xfkULZdf"}, {"label": "하이원 워터파크에서 4KM 거리에 있는 진입로(하이원 마운틴콘도 대형주차장)", "url": "https://naver.me/x58Jyyzt"}], "level": 3, "km": 2.55, "kmNote": "", "addr": ["강원 정선군 고한읍 고한리 산 348"], "org": "영월국유림관리소", "region": "강원", "lat": 37.2094, "lng": 128.82741, "geo": "sourced", "mins": 60, "parking": [{"t": "하이원 워터파크에서 4KM 거리에 있는 진입로(하이원 마운틴콘도 대형주차장)", "src": null}, {"t": "하이원 마운틴콘도 일원 주차 가능(도롱이연못은 주차 불가)", "src": "https://www.ktriptips.com/kor/leisure/2674762"}], "toilet": null, "barrierFree": null, "tags": [], "notice": null, "start": {"name": "하이원 마운틴콘도 대형주차장 진입로", "addr": "강원 정선군 고한읍 하이원길 265-1 일원 (고한리 산348)"}, "geoSrc": "https://www.ktriptips.com/kor/leisure/2674762"}, {"id": 6, "name": "원주 중앙근린공원 숲속둘레길", "sub": "", "desc": "원주 중앙근린공원 숲속둘레길은 원주의 명륜동과 무실동 가운데 자리잡은 용화산 일대를 따라 새롭게 닦은 도심 속의 숲길입니다. 기존의 등산로를 활용한 마루길은 상수리나무와 아까시나무 숲을 탐방할 수 있으며, 용화산 능선을 따라 새롭게 닦아 낸 풍경길은 완만한 등산로와 데크길이 이어져 어린이나 노약자도 부담없이 걸을 수 있습니다. 둘레길 주변에는 원주문화원, 중앙근린공원 체육시설, 잔디광장, 놀이터, 야외무대 등의 유희시설이 있어 다양한 활동을 즐길 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/xDjBZxop"}], "level": 1, "km": 5.6, "kmNote": "", "addr": ["강원 원주시 무실동 1914"], "org": "원주시", "region": "강원", "lat": 37.336, "lng": 127.931, "geo": "approx", "mins": 110, "parking": null, "toilet": null, "barrierFree": null, "tags": ["데크길", "가족·어린이"], "notice": null, "start": {"name": "원주 중앙근린공원", "addr": "강원 원주시 무실동 1914"}}, {"id": 7, "name": "대관령옛길", "sub": "하제민원~주막터~반정", "desc": "대관령옛길은 서울에서 강릉까지 이어지는 조선시대 전국 9개 대로 중 하나인 관동대로의 한 구간으로 2010년 국가 지정 명승 제74호로 지정된 길 입니다. 대관령 옛길은 강원도 관찰사를 지낸 송강 정철이 관동별곡을 쓰고, 강릉이 고향이었던 신사임당이 어린 율곡을 데리고 함께 넘던 길이고, 영동지방의 보부상들이 물건을 지고 오르기도 하였던 옛 사람들의 삶이 녹아든 길 입니다. 아름다운 자연경관과 풍부한 문화자원을 보유하고 있어 2021년 최초 국가숲길로 지정된 대관령숲길 중 한 코스이기도 합니다.", "links": [{"label": "대관령옛길", "url": "https://naver.me/GSizsYKq"}, {"label": "대관령박물관(대관령옛길 입구)", "url": "https://naver.me/xDjBZxop"}], "level": 4, "km": 4.53, "kmNote": "", "addr": ["강원 강릉시 성산면 어흘리 374-3"], "org": "강릉국유림관리소", "region": "강원", "lat": 37.71683, "lng": 128.80407, "geo": "sourced", "mins": 140, "parking": [{"t": "대관령박물관 무료 주차장", "src": "https://xn--ok0b236bp0a.com/place/27932"}], "toilet": [{"t": "출발점 대관령박물관에 화장실 있음", "src": "https://xn--ok0b236bp0a.com/place/27932"}], "barrierFree": null, "tags": ["역사·문화"], "notice": null, "start": {"name": "대관령박물관(대관령옛길 입구)", "addr": "강원 강릉시 성산면 대관령옛길 1 (어흘리 374-3)"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/27932"}, {"id": 8, "name": "항골숨바우길", "sub": "", "desc": "정선 북평면에 자리잡은 항골계곡을 따라 조성된 숲길인 항골 숨바우길은 백성봉과 연결되는 코스에 자연의 모습을 최대한 보존하면서 잘 정비되어 있어 남녀노소 누구나 산책하듯 편안하게 걸을 수 있는 숲길입니다. 숲길 중간중간에는 용소를 비롯한 화전민터, 거북바위 등 자연의 볼거리를 볼 수있으며, 특히 향골계곡 입구부터 좌측 산비탈을 따라 180여개의 소망의 돌탑을 볼 수 있는데, 과거 탄광촌의 번영을 소망하여 올렸다고 합니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/GozPHNF7"}], "level": 3, "km": 7.7, "kmNote": "", "addr": ["강원 정선군 북평면 북평리 산1"], "org": "정선군청", "region": "강원", "lat": 37.465, "lng": 128.67, "geo": "approx", "mins": 190, "parking": [{"t": "항골계곡 입구 주차장, 무료", "src": "https://www.telltrip.com/domestic-travel/jeongseon-hangol-valley-sumbawoogil-trekking/"}], "toilet": null, "barrierFree": null, "tags": ["계곡", "가족·어린이"], "notice": [{"t": "연중무휴 개방, 우천·강설 시 우측 임도로 우회", "src": "https://www.telltrip.com/domestic-travel/jeongseon-hangol-valley-sumbawoogil-trekking/"}], "start": {"name": "항골계곡 입구 주차장", "addr": "강원 정선군 북평면 북평리 445"}}, {"id": 9, "name": "오유밭길", "sub": "도솔숲길", "desc": "산림유전자원보호구역으로 지정되어 수려한 경관이 펼쳐지는 오유밭길은 2021년 지정한 대한민국 국가숲길 1호인 DMZ일원 분지에 조성된 DMZ펀치볼둘레길 중 하나입니다. 오유밭길을 따라서는 숲길 전 구역에서 볼 수 있는 천연기념물 217호 산양 등 야생동물의 흔적과 노랑제비꽃 군락지 등의 다양한 식생을 발견할 수 있으며 전쟁과 평화를 중심으로 한 산림문화와 역사를 체험할 수 있습니다. 특히 단축코스인 도솔숲길(7.5km)에서 부부소나무 전망대와 송가봉 전망대에서 해안면 전경를 한눈에 담을 수 있습니다.", "links": [{"label": "DMZ펀치볼둘레길 안내센터", "url": "https://naver.me/GHE6VnOq"}, {"label": "오유밭길 단축코스(시점 : 해안야생화공원)", "url": "https://naver.me/FOvFM2ig"}], "level": 3, "km": 7.5, "kmNote": "", "addr": ["해안야생화공원 : 강원 양구군 해안면 오유리 133"], "org": "민북지역국유림관리소", "region": "강원", "lat": 38.29056, "lng": 128.14418, "geo": "sourced", "mins": 190, "parking": [{"t": "안내센터 주차장 소형 70대·대형 8대, 무료", "src": "https://www.ktriptips.com/kor/tourspot/2569463"}], "toilet": null, "barrierFree": null, "tags": ["전망", "소나무·금강송", "역사·문화", "바다·호수"], "notice": [{"t": "사전예약 필수, 숲해설사 동반 탐방(09:20·13:20 출발, 2인 이상)", "src": "https://www.ktriptips.com/kor/tourspot/2569463"}], "start": {"name": "DMZ펀치볼둘레길 안내센터(단축코스는 해안야생화공원 출발)", "addr": "강원 양구군 해안면 해안서화로 23"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2569463"}, {"id": 10, "name": "국민의 숲 트레킹길", "sub": "", "desc": "국민의숲트레킹길은 갈림길이 많아 전체 거리는 5.95km이지만, 경사가 거의 없는 흙길을 따라 한 바퀴 크게 여유 있게 걸어도 1시간 남짓 걸려 가벼운 마음으로 걸을 수 있는 숲길입니다. 옛 대관령휴게소를 중심으로 311ha에 걸쳐 있던 황무지를 1978년부터 11년 동안 나무를 일일이 심고 가꾸며, 대관령의 극심한 바람과 추위를 이겨낼 수 있는 통발과 방풍울타리를 설치하여 풍성한 숲으로 일궈낸 조림 성공의 역사가 있는 자랑스러운 숲길입니다.", "links": [{"label": "국민의숲길", "url": "https://map.naver.com/p/entry/place/20717744?c=16.95,0,0,2,dh"}, {"label": "신재생에너지전시관", "url": "https://naver.me/Fn21bMVX"}], "level": 2, "km": 5.4, "kmNote": "", "addr": ["신재생에너지전시관 : 강원 평창군 대관령면 횡계리 14-297"], "org": "평창국유림관리소", "region": "강원", "lat": 37.68844, "lng": 128.74569, "geo": "sourced", "mins": 120, "parking": [{"t": "주차 가능(옛 대관령휴게소 일원)", "src": "https://www.ktriptips.com/kor/tourspot/2798935"}], "toilet": [{"t": "화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/2798935"}], "barrierFree": null, "tags": ["역사·문화"], "notice": null, "start": {"name": "신재생에너지전시관(옛 대관령휴게소 인근)", "addr": "강원 평창군 대관령면 횡계리 14-297 (대관령마루길 340 일원)"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2798935"}, {"id": 11, "name": "아침가리 숲길", "sub": "", "desc": "아침가리의 뜻을 아시나요? '아침에 잠시만 밭을 갈 정도의 시간만 햇빛이 비치고 금방 저버리는 첩첩산중'이라 해서 붙은 이름입니다. 이름에서도 알 수 듯이 자연을 그대로 만날 수 있는 숲길입니다. 도보 출입만 허용되고 사계절 계곡 트레킹의 명소로 연간 10만명 이상이 찾는 숲길입니다. 조금 어렵지만 도전해볼까요?", "links": [{"label": "지도 보기", "url": "https://map.naver.com/v5/entry/place/13491954?lng=128.4068176&lat=37.9613951&placePath=%2F&entry=plt&c=15.38,0,0,2,dha"}], "level": 5, "km": 12.0, "kmNote": "", "addr": ["진동계곡마을 무료주차장 : 강원 인제군 기린면 진동리 1025"], "org": "인제", "region": "강원", "lat": 37.9614, "lng": 128.40682, "geo": "exact", "mins": 400, "parking": [{"t": "진동계곡마을 무료주차장 : 강원 인제군 기린면 진동리 1025", "src": null}, {"t": "진동계곡마을 무료주차장(진동리 1025), 주차 가능", "src": "https://www.ktriptips.com/kor/tourspot/129669"}], "toilet": [{"t": "아침가리계곡 일원 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/129669"}], "barrierFree": null, "tags": ["계곡"], "notice": null, "start": {"name": "진동계곡마을 무료주차장", "addr": "강원 인제군 기린면 진동리 1025"}}, {"id": 12, "name": "강릉 노추산모정탑길", "sub": "", "desc": "어머님의 사랑과 한결같은 갸륵한 마음이 녹아있는 돌탑 3000개가 노추산 자락 계곡을 따라 늘어서 있는 숲길입니다. 이 숲길의 주인공인 차순옥 할머니는 1986년 '하늘아래 첫 동네'라는 강릉시 왕산면 대기리 노추산 계곡에자리를 잡고 2011년 향년 68세로 세상을 떠나기 전까지 무려 26년 동안 돌탑을 쌓았다고 해요. 돌탑길은 1km정도로 가볍게 걸을 수 있고 노추산 정상까지는 약 5km의 등산로가 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/IFjgirI7"}], "level": 1, "km": 1.2, "kmNote": "", "addr": ["강원 강릉시 왕산면 대기리 1679-8"], "org": "강릉", "region": "강원", "lat": 37.57095, "lng": 128.74073, "geo": "sourced", "mins": 20, "parking": [{"t": "주차장 있음(소형 100대), 대기리 1674-5, 무료", "src": "https://www.ktriptips.com/kor/leisure/1869883"}], "toilet": null, "barrierFree": null, "tags": ["계곡"], "notice": [{"t": "입장료 무료, 연중무휴", "src": "https://www.ktriptips.com/kor/leisure/1869883"}], "start": {"name": "노추산 모정탑길 입구", "addr": "강원 강릉시 왕산면 대기리 1679-8"}, "geoSrc": "https://www.ktriptips.com/kor/leisure/1869883"}, {"id": 13, "name": "김삿갓문학길", "sub": "", "desc": "김삿갓문학길의 초반 구간은 조선 후기의 방랑 시인이자 사회에 대한 비판풍자적 내용을 이야기한 민중 시인으로 유명한 김삿갓(난고 김병연)이 실제로 걸어다녔던 옛길을 복원하여 그의 시속에 담긴 정취를 한껏 느낄 수 있게 구성되어있습니다. 추모시비와 돌탑 사이로 난 숲길로 걸어들어가면 계곡따라 열리는 새로운 세계를 만날 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/x7vajohA"}], "level": 2, "km": 3.1, "kmNote": "", "addr": ["김삿갓문학관 : 강원 영월군 김삿갓면 와석리 913-1 난고김삿갓문학관", "김삿갓면사무소 : 강원 영월군 김삿갓면 옥동리 266"], "org": "영월", "region": "강원", "lat": 37.07954, "lng": 128.60176, "geo": "sourced", "mins": 70, "parking": [{"t": "문학관 주차 가능, 무료", "src": "https://www.ktriptips.com/kor/culture/130475"}], "toilet": [{"t": "김삿갓계곡(와석리) 일원 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/126894"}], "barrierFree": null, "tags": ["계곡", "역사·문화"], "notice": [{"t": "문학관 매주 월요일·1월1일·설·추석 당일 휴관, 관람료 별도", "src": "https://www.ktriptips.com/kor/culture/130475"}], "start": {"name": "난고김삿갓문학관", "addr": "강원 영월군 김삿갓면 김삿갓로 216-22 (와석리 913-1)"}, "geoSrc": "https://www.ktriptips.com/kor/culture/130475"}, {"id": 14, "name": "준경 옛길", "sub": "준경묘 숲길", "desc": "조선 태조 이성계의 5대조인 양무장군의 묘인 준경묘가 위치한 숲길입니다. 묘지까지 이르는 길을 호위하는 소나무 수림대와 함께 속리산 정2품송과 혼인한 준경묘 금강송도 만나볼 수 있습니다. 문화체육관광부가 선정하는 추천 웰니스 관광지에 선정된 활기 치유의숲과 인접해 있어, 걷기와 함께 다양한 치유 프로그램을 경험할 수 있습니다.", "links": [{"label": "삼척시 안내 페이지", "url": "https://www.samcheok.go.kr/healinglife/facility4_14"}, {"label": "지도 보기", "url": "https://naver.me/5fnDgkLa"}], "level": 3, "km": 1.8, "kmNote": "", "addr": ["강원도 삼척시 미로면 활기리 산 149", "(준경길 333-360)"], "org": "삼척", "region": "강원", "lat": 37.36702, "lng": 129.05929, "geo": "sourced", "mins": 40, "parking": [{"t": "준경묘 주차장 있음, 무료", "src": "https://www.ktriptips.com/kor/tourspot/125778"}], "toilet": null, "barrierFree": null, "tags": ["소나무·금강송", "역사·문화"], "notice": [{"t": "입장료 무료, 상시 개방", "src": "https://www.ktriptips.com/kor/tourspot/125778"}], "start": {"name": "준경묘 입구(주차장)", "addr": "강원 삼척시 미로면 준경길 333-360 (활기리 산149)"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/125778"}, {"id": 15, "name": "산수길", "sub": "함께하길-놀다가길-건강하길", "desc": "국립춘천숲체원 안에 조성된 2.6KM의 숲길로 경사가 완만하고 물길을 따라 숲길이 형성되어 있어 숲길걷기를 처음 시작하는 분들에게도 부담없이 걸을 수 있는 길입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/Gyeyysvv"}], "level": 1, "km": 2.6, "kmNote": "", "addr": ["강원 춘천시 신북읍 발산리 산32-1 국립춘천숲체원", "(장본2길 331)"], "org": "춘천", "region": "강원", "lat": 37.9786, "lng": 127.77076, "geo": "sourced", "mins": 50, "parking": [{"t": "숲체원 주차 가능, 무료", "src": "https://www.ktriptips.com/kor/tourspot/2710587"}], "toilet": [{"t": "국립춘천숲체원 맞이관 앞", "src": "https://www.ktriptips.com/kor/tourspot/2710587"}], "barrierFree": null, "tags": ["휴양림·숲체원"], "notice": [{"t": "매월 첫째 주 월요일 휴무", "src": "https://www.ktriptips.com/kor/tourspot/2710587"}], "start": {"name": "국립춘천숲체원", "addr": "강원 춘천시 신북읍 장본2길 331"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2710587"}, {"id": 16, "name": "잣향기 피톤치드길", "sub": "", "desc": "경기도 가평에 위치해 있는 잣향기 피톤치드길은 무장애 나눔길을 따라 100년의 잣나무 숲을 경험할 수 있어요! 산림청 복권기금인 녹색자금을 지원받아 누구나 편리하고 안전하게 다양한 산림복지 서비스를 누릴 수 있도록 조성된 치유의 숲길입니다. 숲길을 걸으시고 축령백림관, 잣향기목공관에 들르셔서 체험도 즐겨보세요!", "links": [{"label": "지도 보기", "url": "https://naver.me/5Tv3HeJI"}], "level": 2, "km": 6.57, "kmNote": "", "addr": ["경기 가평군 상면 행현리 922-1", "(축령로 289-146)"], "org": "경기도 산림환경연구소", "region": "경기", "lat": 37.77077, "lng": 127.33657, "geo": "sourced", "mins": 150, "parking": [{"t": "잣향기푸른숲 주차 가능", "src": "https://www.ktriptips.com/kor/tourspot/2407108"}], "toilet": [{"t": "잣향기푸른숲 내 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/2407108"}], "barrierFree": [{"t": "잣향기 피톤치드길  경기도 가평에 위치해 있는 잣향기 피톤치드길은 무장애 나눔길을 따라 100년의 잣나무 숲을 경험할 수 있어요! 산림청 복권기금인 녹색자금을 지원받아 누구나 편리하고 안전하게 다양한 산림복지 서비스를 누릴 수 있도록 조성된 치유의 숲길입니다.", "src": null}], "tags": ["무장애"], "notice": [{"t": "매주 월요일 휴무, 입장료 성인 1,000원", "src": "https://www.ktriptips.com/kor/tourspot/2407108"}], "start": {"name": "잣향기푸른숲", "addr": "경기 가평군 상면 축령로 289-146"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2407108"}, {"id": 17, "name": "문수산 등산로", "sub": "", "desc": "김포의 대표적인 산이자 유일하게 현존하는 성곽이 있는 문수산의 첫 자락인 군하숲길은 월곶생활문화센터, 김포국제조각공원, 구름다리, 홍예문을 지나 문수산 정상으로 이어집니다. 숲길을 따라 오르며 - 김포국제조각공원, 홍예문, 문수산성(국가지정문화제 등을 보며 → 김포조각공원, 홍예문, 문수산성(국가지정문화재 사적 139호), 성곽과 장대지 풍담대사 부도비, 향교 등을 보며 월곶면의 역사와 문화 예술을 감상할 수 있습니다. 또한, 문수산 산림욕장을 통해서 올라가는 등산코스에서는 소나무의 피톤치드를 마시며 산림욕을 즐길 수 있으며, 문수산 정상에서는 서해바다와 조강이 하늘을 맞닿은 듯한 탁트임을 통해 아름다움을 선사합니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/GjR1qOkt"}], "level": 3, "km": 14.0, "kmNote": "", "addr": ["문수산 산림욕장 : 경기 김포시 월곶면 성동리 산 38"], "org": "경기도 김포시", "region": "경기", "lat": 37.73725, "lng": 126.53321, "geo": "sourced", "mins": 350, "parking": [{"t": "문수산 산림욕장 주차 가능", "src": "https://www.ktriptips.com/kor/tourspot/126703"}], "toilet": [{"t": "문수산 산림욕장 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/126703"}], "barrierFree": null, "tags": ["소나무·금강송", "역사·문화", "바다·호수"], "notice": [{"t": "입장료 무료, 연중무휴", "src": "https://www.ktriptips.com/kor/tourspot/126703"}], "start": {"name": "문수산 산림욕장", "addr": "경기 김포시 월곶면 성동리 산38"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/126703"}, {"id": 18, "name": "연인산 명품 계곡길", "sub": "", "desc": "선녀들이 내려와 쉬어간 선녀탕, 화전민터, 숯가마터 등 우리의 산림문화와 역사를 경험할 수 있는 명품숲길입니다. 과거에는 기암괴석 등으로 소수의 탐방객들만이 찾던 비경을 가진 숲길이었지만 최근에는 총 11개의 징검다리와 출렁다리를 조성하여 어린아이부터 어르신까지 즐길 수 있는 숲길입니다. 자연 속에서 멍때리기 좋은 '멍존'과 낮잠을 즐길 수 있는 썬베드 등 쉬어가는 재미가 있는 숲길입니다. 아참! 과거 항일의병을 주도했던 유학자 유중교 선생이 제자들과 함꼐 이름을 붙인 9개의 멋진 계곡, 용추계곡을 감상하는 것도 잊지마세요!", "links": [{"label": "지도 보기", "url": "https://naver.me/5jjrrILI"}], "level": 4, "km": 4.7, "kmNote": "", "addr": ["연인산도립공원 관리사무소 : 경기 가평군 가평읍 승안리 297-57"], "org": "경기도", "region": "경기", "lat": 37.86, "lng": 127.47, "geo": "approx", "mins": 140, "parking": [{"t": "승안리 639-1 인근 무료 공영주차장(화장실 있음)", "src": "https://travelmapjourney.com/gapyeong-yongchu-valley-guide-2/"}], "toilet": [{"t": "승안리 639-1 인근 주차장에 화장실", "src": "https://travelmapjourney.com/gapyeong-yongchu-valley-guide-2/"}], "barrierFree": null, "tags": ["계곡", "가족·어린이", "역사·문화"], "notice": [{"t": "산불조심기간(3.2~4.30, 11.1~12.15) 일부 등산로 통제", "src": "https://www.ktriptips.com/kor/tourspot/126859"}], "start": {"name": "연인산도립공원 관리사무소(용추계곡)", "addr": "경기 가평군 가평읍 승안리 297-57"}}, {"id": 19, "name": "소리향기길, 명언읽고가길", "sub": "", "desc": "경기도민이 사랑하는 강씨봉자연휴양림 내 조성된 명품숲길입니다. 계곡을 따라 이어진 완만한 경사지의 소리향기길은 계곡을 따라 걸을 수 있어서 물소리의 청량함을 한껏 느낄 수 있는 매력이 있습니다. 돌아오는 코스로 명언읽고길을 선택한다면, 숲길 구간마다 손글씨로 만날 수 있는 명언과 시, 인생에 힘이 되어주는 글귀들 덕분에 성찰과 위로의 시간을 가질 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/G5rJBfQU"}], "level": 1, "km": 3.0, "kmNote": "", "addr": ["강씨봉자연휴양림 : 경기 가평군 북면 논남기길 520"], "org": "경기도 산림환경연구소", "region": "경기", "lat": 37.96866, "lng": 127.40941, "geo": "sourced", "mins": 60, "parking": [{"t": "휴양림 주차 가능", "src": "https://www.ktriptips.com/kor/tourspot/2774103"}], "toilet": [{"t": "휴양림 내 공중화장실 1동", "src": "https://www.ktriptips.com/kor/tourspot/2774103"}], "barrierFree": null, "tags": ["계곡", "휴양림·숲체원"], "notice": [{"t": "입장료 성인 1,000원, 06~18시(11~3월 07시~) 운영", "src": "https://www.ktriptips.com/kor/tourspot/2774103"}], "start": {"name": "강씨봉자연휴양림", "addr": "경기 가평군 북면 논남기길 520"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2774103"}, {"id": 20, "name": "청년 김대건길", "sub": "", "desc": "청년 김대건 길은 김대건 신부가 200여년 전에 처음 미사를 드린 은이성지에서 시작되어 안성시 미리내성지까지 이어지는 순례길로, 김대건 신부가 생전 사목 활동을 하던 길이자 순교 후 유체가 이동한 경로이기도 합니다. 이 길은 한국의 산티아고 길로 불리기도 하는데, 은이계곡, 신덕·망덕·애덕고개를 거치며 인근의 와우정사, 석포숲공원 등과 같은 관광지를 둘러 볼 수 있습니다. 청년 김대건이 떠올렸던 생각들, 그리고 마음들을 따라가며 걷다보면 민족을 사랑했던 김대건 신부의 삶과 열정을 되새길 수 있을 것입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/xGOGyKWo"}], "level": 2, "km": 10.3, "kmNote": "", "addr": ["은이성지 : 경기 용인시 처인구 남곡리 632-2", "미리내성지 : 경기 안성시 양성면 미산리 12-1"], "org": "용인시", "region": "경기", "lat": 37.21595, "lng": 127.27779, "geo": "sourced", "mins": 230, "parking": [{"t": "은이성지 주차장(약 20대), 무료, 17시까지", "src": "https://mom-mom.net/travel/places/6371c72e5a24c706c9168ba5"}], "toilet": [{"t": "은이성지 공용화장실", "src": "https://mom-mom.net/travel/places/6371c72e5a24c706c9168ba5"}], "barrierFree": null, "tags": ["계곡", "역사·문화"], "notice": [{"t": "은이성지 월요일 휴무, 09~17시 운영", "src": "https://www.ktriptips.com/kor/tourspot/2612873"}], "start": {"name": "은이성지", "addr": "경기 용인시 처인구 양지면 은이로 182 (남곡리 632-2)"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2612873"}, {"id": 21, "name": "가좌산 망진산 숲길", "sub": "자연과 하나 되는 숲길", "desc": "가좌산 둘레길은 진주시를 대표하는 10대 산인 가좌산, 망진산을 연결하는 숲길입니다. 대표적으로 석류공원과 연암공대 앞 등산로로 진입하는 코스가 있으며, 약 7.86km이며 누구나 즐길 수 있는 숲길입니다. 연암공대에서 시작하는 코스는 초록빛 차나무와 편백나무가 심어져 있어 아름다운 경치를 이루는 청풍길과 사시사철 푸른 대나무숲이 있습니다. 그리고 대나무숲길과 이어지는 어울림 숲길, 물소리쉼터 등은 가볍게 운동하고 쉬어갈 수 있도록 만들어져 있습니다. 숲길에 연결된 석류공원은 진주팔경 중 제4경으로 곱히는 절경이며, 숲길 끝자락인 망진산 정상의 남강 조망은 밤낮없이 아름답습니다.", "links": [{"label": "연암공과대학 입구", "url": "https://naver.me/xswamGxp"}], "level": 2, "km": 7.86, "kmNote": "", "addr": ["연암공과대학교 : 경남 진주시 주약동 가좌동 780"], "org": "진주시", "region": "경남", "lat": 35.162, "lng": 128.086, "geo": "approx", "mins": 170, "parking": [{"t": "연암공과대학 입구 도로변 주차", "src": "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20260514.22012001705"}], "toilet": [{"t": "코스 중 체육공원 등에 화장실", "src": "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=2200&key=20260514.22012001705"}], "barrierFree": null, "tags": ["전망", "곶자왈·편백"], "notice": null, "start": {"name": "연암공과대학 입구 (국립산림과학원 산림바이오소재연구소 수목종합전시원 입구)", "addr": "경남 진주시 가좌동 780 (연암공과대학교)"}}, {"id": 22, "name": "상림 숲길", "sub": "", "desc": "통일신라 진성여왕 때 조성된 역사가 살아 숨쉬는 숲길입니다. 강물이 함양 중심부 시가지를 관통함으로 인해 여름철에 범람피해가 많이 일어나자, 최치원 선생님께서 수해피해를 막기위해 조성한 숲입니다. 오래된 나무들이 알려주는 우리 선조들의 산림경영에 대한 혜안이 숲길의 싱그러움을 더합니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5eGUbEfv"}], "level": 1, "km": 1.6, "kmNote": "", "addr": ["상림공원 : 경남 함양군 함양읍 교산리 1073-1"], "org": "함양", "region": "경남", "lat": 35.52558, "lng": 127.71902, "geo": "sourced", "mins": 30, "parking": [{"t": "공원 입구 공영주차장(무료)", "src": "https://xn--ok0b236bp0a.com/place/11494"}], "toilet": [{"t": "공원 내 화장실 있음", "src": "https://mom-mom.net/travel/places/655c03077befcfe324f236b4"}], "barrierFree": null, "tags": ["역사·문화"], "notice": [{"t": "입장료 무료, 연중무휴", "src": "https://www.ktriptips.com/kor/tourspot/126861"}], "start": {"name": "상림공원", "addr": "경남 함양군 함양읍 교산리 1073-1"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/11494"}, {"id": 23, "name": "울진금강소나무숲길", "sub": "가족탐방로", "desc": "울진금강소나무숲길은 1680년(조선 숙종 6년) 황장봉산으로 지정되어 현재 산림유전자원보호구역으로 지속적으로 보호관리되고 있으며, 수령 500년 이상인 보호수 2본과 수령 200년 이상의 금강소나무 군락지를 탐방할 수 있는 숲길입니다. 가족탐방로는 가족이 함께 탐방하기 알맞은 숲길로, 숲해설가가 전하는 역사 이야기를 들으며 소나무숲의 사계절과 산양, 담비, 산앵도, 꼬리진달래 등 천연기념물 및 멸종위기 야생동식물을 만날 수 있습니다.", "links": [{"label": "금강송수련관", "url": "https://naver.me/Gud8pk8j"}], "level": 2, "km": 5.3, "kmNote": "", "addr": ["금강송수련관 : 경북 울진군 금강송면 대광천길 81 (소광리 산29)"], "org": "울진국유림관리소", "region": "경북", "lat": 36.925, "lng": 129.155, "geo": "approx", "mins": 120, "parking": null, "toilet": null, "barrierFree": null, "tags": ["가족·어린이", "소나무·금강송", "역사·문화", "바다·호수"], "notice": [{"t": "홈페이지(숲나들e) 사전예약 필수, 숲해설가 동반 탐방, 매주 화요일 휴무", "src": "https://xn--ok0b236bp0a.com/place/15209"}], "start": {"name": "금강송수련관 일대 (가족탐방로 집결지)", "addr": "경북 울진군 금강송면 대광천길 83 (소광리 150-1)"}}, {"id": 24, "name": "대티골 아름다운 숲길", "sub": "", "desc": "울창한 숲을 통과한 햇살이 발밑에 부서지고, 바람에 실려 온 솔향기에 머리가 맑아지는 숲길을 소개합니다. 경북 영양 일월산 자락의 ‘대티골 아름다운 숲길’은 곳곳에 쉼터와 벤치가 있어 쉬어가기도 좋을뿐더러 푹신한 흙길은 어른 서너 명이 나란히 걸을 수 있을 만큼 넉넉하고 평탄합니다. 숲길 탐방로는 일월면 용화리 윗대티골에서 시작하는 옛국도길(3.5km), 칠밭목에서 마을로 이어지는 칠밭길(0.9km), 옛마을길(0.8km), 댓골길(1.2km) 등 4코스로 구성된다. 전부 걸을 수도 있고 원하는 대로 골라 걸을 수 있습니다. 이 길에는 자연의 아름다움 뿐 아니라 일제강점기 수탈과 훼손의 아픈 역사가 남아있습니다. 긴 시간 버려지고 잊혀졌던 구간을 최근 주민들이 정비해서 명품숲길로 거듭나게 되었습니다. 나무 한 그루, 풀 한포기, 돌 하나도 함부로 건드리지 않고 자연 본래 그대로를 지키기 위해 애쓴 주민들의 마음을 느끼면서 걷는 것도 좋겠습니다.", "links": [{"label": "지도 보기", "url": "https://m.place.naver.com/share?id=13333813&tabsPath=%2Fphoto&appMode=detail"}], "level": 3, "km": 7.6, "kmNote": "", "addr": ["대티골마을 : 경북 영양군 일월면 영양로 4181-47"], "org": "영양", "region": "경북", "lat": 36.81305, "lng": 129.12617, "geo": "sourced", "mins": 190, "parking": [{"t": "대티골마을 주차장 완비(무료)", "src": "https://xn--ok0b236bp0a.com/place/25705"}], "toilet": null, "barrierFree": null, "tags": ["소나무·금강송", "역사·문화"], "notice": null, "start": {"name": "대티골마을 (윗대티골, 옛국도길 시작)", "addr": "경북 영양군 일월면 영양로 4181-47"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/25705"}, {"id": 25, "name": "청옥산 생태경영림 숲길", "sub": "", "desc": "태백산맥의 청량한 기운을 느낄 수 있는 숲길입니다. 원시림의 형태를 잘 유지하고 있어서 물소리와 새의 지저귐, 바람이 나뭇가지를 흔드는 소리를 벗 삼아 오르는 재미를 느낄 수 있습니다. 숲으로 들어서는 입구에서 '금강송생태경영림'을 시작으로 숲길을 따라 단풍나무길, 자작나무 길, 잣나무 숲이 차례로 등장해 다양한 풍경을 감상할 수 있습니다. 나무들이 전해주는 숲의 오케스트라를 느껴보세요.", "links": [{"label": "지도 보기", "url": "https://naver.me/FnMNyH6y"}], "level": 3, "km": 3.3, "kmNote": "", "addr": ["고선,대현리금강소나무생태경영림안내소 :", "경북 봉화군 소천면 청옥로 1261-32(고선리 산37)"], "org": "남부청", "region": "경북", "lat": 37.01979, "lng": 128.97925, "geo": "approx", "mins": 80, "parking": [{"t": "주차 가능", "src": "https://www.ktriptips.com/kor/tourspot/129702"}], "toilet": [{"t": "화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/129702"}], "barrierFree": null, "tags": ["소나무·금강송"], "notice": [{"t": "숲나들e 사전예약, 매주 화요일 휴무, 09:00~18:00, 무료", "src": "https://www.ktriptips.com/kor/tourspot/129702"}], "start": {"name": "고선·대현리 금강소나무 생태경영림 안내소", "addr": "경북 봉화군 소천면 청옥로 1261-32 (고선리 산37)"}}, {"id": 26, "name": "남해바래길 7코스", "sub": "화전별곡길", "desc": "국립남해편백자연휴양림을 둘러싼 울창한 편백나무 사이로 난 임도를 지나는 숲길입니다. 청량감을 선사하는 편백숲 뿐 아니라 파독광부와 파독간호사들이 은퇴 후 귀국하여 정착한 독일마을을 지나며 대한민국 근현대사의 한 페이지를 장식한 이야기를 현장감있게 담아내며 시작됩니다.", "links": [{"label": "지도 보기", "url": "https://map.naver.com/p/entry/place/1971723950?lng=128.017303&lat=34.7703095&placePath=%2Fhome%3Fentry%3Dpll&c=15.00,0,0,2,dh"}], "level": 3, "km": 17.0, "kmNote": "", "addr": ["경남 남해군 삼동면 봉화리 2501"], "org": "경남", "region": "경남", "lat": 34.77031, "lng": 128.0173, "geo": "exact", "mins": 430, "parking": null, "toilet": null, "barrierFree": null, "tags": ["휴양림·숲체원", "바다·호수", "곶자왈·편백"], "notice": [{"t": "물건마을~천하마을 편도 17km, 약 6시간 30분 소요, 이용료 무료", "src": "https://www.ktriptips.com/kor/leisure/2675070"}], "start": {"name": "물건마을 (남해바래길 7코스 시점)", "addr": "경남 남해군 삼동면 동부대로1030번안길 50-1"}}, {"id": 27, "name": "비슬산 둘레길", "sub": "옥연지 송해공원 둘레길", "desc": "비슬산 둘레길 2코스는 대구 달성군 비슬산 인근에 위치한 옥연지를 한바퀴 도는 수변 둘레길입니다. 둘레길은 약 3.5km로 1시간 정도가 소요됩니다. 옥연지는 옥포의 옥(玉)자와 용연사의 연(淵)에서 유래한 이름이며, 기세곡천의 상류 지역인 비슬산과 주변 산지에서 발원한 기세곡천을 막아 조성된 저수지입니다. 아름다운 옥연지의 둘레길에는 송해공원, 담소 전망대, 실소전망대, 폭소 전망대, 박장 대소 전망대 등이 있으며, 금굴, 옥연지 산림욕장, 편백나무 군락지를 방문할 수 있습니다. 특히, 옥연지 송해공원 둘레길은 봄에 방문하면, 왕벚나무의 벚꽃길을 걸을 수 있으며, 겨울에는 옥연지의 빙벽을 감상할 수 있습니다.", "links": [{"label": "옥연지 송해공원", "url": "https://naver.me/IG6Guw6o"}], "level": 2, "km": 3.5, "kmNote": "", "addr": ["대구 달성군 옥포읍 기세리 306"], "org": "달성군청", "region": "대구", "lat": 35.78034, "lng": 128.48029, "geo": "sourced", "mins": 80, "parking": [{"t": "송해공원 주차장(무료)", "src": "https://xn--ok0b236bp0a.com/place/12145"}], "toilet": [{"t": "송해기념관·선비체험관 화장실 이용", "src": "https://xn--ok0b236bp0a.com/place/12145"}], "barrierFree": null, "tags": ["전망", "바다·호수", "곶자왈·편백"], "notice": [{"t": "입장 무료, 연중무휴 상시개방", "src": "https://xn--ok0b236bp0a.com/place/12145"}], "start": {"name": "옥연지 송해공원", "addr": "대구 달성군 옥포읍 기세리 306"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/12145"}, {"id": 28, "name": "대전둘레산길", "sub": "제5구간 '계족산성길'", "desc": "계족산성길은 대전을 대표하는 계족산성을 비롯해 진현성, 능성 등이 산 능선을 따라 이어져 있어 마치 역사기행을 할 수 있는 명품숲길입니다. 약 11km 숲길 전 구간이 경사가 비교적 완만하여 쉽게 걸을 수 있습니다. 숲길을 중심으로 동쪽에는 대청호의 푸른 수변 전망이 걷는 길 내내 장관을 이루며, 서쪽에는 대전의 발전된 시가지 전경을 한눈에 볼 수 있는데, 이는 대전둘레산길 5구간에서만 볼 수 있는 특징입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5Cz8aEIa"}], "level": 3, "km": 11.0, "kmNote": "", "addr": ["대전 동구 비룡동~대덕구 장동", "- 동신고입구 버스종점 : 동구 비룡동 547-2", "- 장동산림욕장 : 대전 대덕구 장동 산59"], "org": "대전", "region": "대전", "lat": 36.3525, "lng": 127.474, "geo": "approx", "mins": 280, "parking": [{"t": "종점 장동산림욕장 주차장(무료)", "src": "https://www.ktriptips.com/kor/tourspot/705678"}], "toilet": [{"t": "종점 장동산림욕장 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/705678"}], "barrierFree": null, "tags": ["전망", "역사·문화"], "notice": null, "start": {"name": "동신고입구 버스종점 (종점: 장동산림욕장)", "addr": "대전 동구 비룡동 547-2"}}, {"id": 29, "name": "계족산 황톳길", "sub": "", "desc": "자연을 사랑하는 사람들과 아웃도어를 즐기는 사람들이라면 꼭 가봐야할 숲길입니다. 자연의 아름다운, 도전적인 지형으로 자연을 탐험할 수 있습니다. 임도 측면에 황톳길이 조성되어 있어 맨발걷기에도 좋은 명품숲길입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/GMRvmZc5"}], "level": 3, "km": 14.0, "kmNote": "", "addr": ["대전광역시 대덕구 장동 485"], "org": "대전", "region": "대전", "lat": 36.40552, "lng": 127.44251, "geo": "sourced", "mins": 350, "parking": [{"t": "장동산림욕장 주차장(무료)", "src": "https://www.ktriptips.com/kor/tourspot/705678"}], "toilet": [{"t": "세족대 근처 화장실", "src": "https://mom-mom.net/travel/places/670492f648d44cd8416fd9a8"}], "barrierFree": null, "tags": [], "notice": [{"t": "입장료·주차 무료, 연중무휴", "src": "https://www.ktriptips.com/kor/tourspot/705678"}], "start": {"name": "장동산림욕장 입구", "addr": "대전 대덕구 산디로 79-70 (장동)"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/13011"}, {"id": 30, "name": "백양산 나들숲길", "sub": "", "desc": "백양산 나들숲길은 부산의 사상구, 북구, 부산진구를 아우르는 백양산 둘레길입니다. 대표적인 코스로는 어린이대공원 입구에서 성지곡수원지를 지나 정상으로올라가는 코스와 선암사에서 출발해 정상으로 가는 코스가 있습니다. 그리고 쭉쭉 뻗은 편백나무가 있는 청풍길, 새암길, 그리고 백양산 애진봉 정상 철쭉군락지로 이어지는 하늘빛길 등 다양한 10개 코스가 있어 나들숲길에서 다양한 즐거움을 찾을 수 있습니다.", "links": [{"label": "부산(백양산)어린이대공원", "url": "https://naver.me/xC6tgBgY"}], "level": 2, "km": 31.5, "kmNote": "", "addr": ["부산 어린이대공원 : 부산 부산진구 초읍동 43"], "org": "부산 진구", "region": "부산", "lat": 35.18726, "lng": 129.04268, "geo": "sourced", "mins": 700, "parking": [{"t": "어린이대공원 주차장 있음(요금 미기재)", "src": "https://www.ktriptips.com/kor/tourspot/126119"}], "toilet": [{"t": "공원 내 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/126119"}], "barrierFree": null, "tags": ["가족·어린이", "역사·문화", "곶자왈·편백"], "notice": [{"t": "입장료 무료, 연중무휴", "src": "https://www.ktriptips.com/kor/tourspot/126119"}], "start": {"name": "부산어린이대공원 입구", "addr": "부산 부산진구 새싹로 295 (초읍동)"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/7084"}, {"id": 31, "name": "회동호 치유숲길", "sub": "", "desc": "부산 금정구가 품은 아름다운 산중 호수를 둘러싼 회동호 치유숲길은 사시사철 자연의 다양한 매력을 가진 명품숲길입니다. 선동 상현마을에서 시작해 부엉산, 땅뫼산, 회동댐을 거쳐 아홉산 임도길로 연결되는 약 20km의 수변 산책로를 걸으면, 봄에는 황금빛 산수유길을 따라, 여름에는 시원한 대나무숲과 호수길을 따라 자연을 감상하는 즐거움을 가질 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/FGow6wIM"}], "level": 2, "km": 20.0, "kmNote": "", "addr": ["1. 오륜동회관 : 부산 오륜동 578-15", "2. 상현마을 선동주차장 부산 금정구 선동 720-2", "3. 회동동 버스정류장 : 부산 금정구 회동동 142-2"], "org": "부산광역시 금정구청", "region": "부산", "lat": 35.2795, "lng": 129.1275, "geo": "approx", "mins": 440, "parking": [{"t": "상현마을 선동주차장 부산 금정구 선동 720-2", "src": null}], "toilet": null, "barrierFree": null, "tags": ["바다·호수"], "notice": null, "start": {"name": "상현마을 선동주차장(선동 상현마을)", "addr": "부산 금정구 선동 720-2"}}, {"id": 32, "name": "금정산 대천천 누리길", "sub": "", "desc": "속철도 터널 공사를 하면서 배출된 토사가 잔뜩 쌓여 10년간 방치돼 있던 사토장이 시민들이 사랑하는 명품숲길로 탈바꿈 했습니다. 시민들이 가벼운 마음으로 산책하기 좋게 데크길이 구비되어 있는 것은 물론, 계곡, 수목원, 수국길, 갈매길로 구성되어있는 구성은 숲길을 걷는 즐거움을 더합니다. 전망대 쉼터, 자전거 주차대, 주차장, 화장실 등 편의시설도 준비되어 있어 가족휴양객, 탐방객 모두에게 행복한 시간을 주는 명품숲길입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/xivoU3Pw"}], "level": 1, "km": 8.0, "kmNote": "", "addr": ["1. 대천천마을공동주차장 : 부산 북구 산성로 123-10", "2.  금성동행정복지센터 : 부산 금정구 산성로 452"], "org": "부산", "region": "부산", "lat": 35.24994, "lng": 129.04011, "geo": "sourced", "mins": 160, "parking": [{"t": "대천천마을공동주차장 : 부산 북구 산성로 123-10", "src": null}, {"t": "전망대 쉼터, 자전거 주차대, 주차장, 화장실 등 편의시설도 준비되어 있어 가족휴양객, 탐방객 모두에게 행복한 시간을 주는 명품숲길입니다.", "src": null}, {"t": "인근 주차장 무료 운영", "src": "https://www.telltrip.com/domestic-travel/daecheoncheon-nuri-trail-busan-hydrangea-forest/"}], "toilet": [{"t": "전망대 쉼터, 자전거 주차대, 주차장, 화장실 등 편의시설도 준비되어 있어 가족휴양객, 탐방객 모두에게 행복한 시간을 주는 명품숲길입니다.", "src": null}, {"t": "편의시설로 화장실 있음", "src": "https://www.telltrip.com/domestic-travel/daecheoncheon-nuri-trail-busan-hydrangea-forest/"}], "barrierFree": null, "tags": ["데크길", "계곡", "전망", "가족·어린이"], "notice": [{"t": "연중무휴 24시간 무료 개방. 집중호우 후 하천 인접 구간 수위 주의", "src": "https://www.telltrip.com/domestic-travel/daecheoncheon-nuri-trail-busan-hydrangea-forest/"}], "start": {"name": "대천천누리길 입구(보행 데크 시작점)", "addr": "부산 북구 화명동 산43-14"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/26826"}, {"id": 33, "name": "구포 무장애 숲길", "sub": "", "desc": "도심에서 노약자, 장애인, 임산부 어린이 누구나 더불의 산림의 혜택을 누릴 수 있는 숲길입니다. 입구에서 정상까지 데크길이 조성되어 있어서 유모차와 휠체어로도 정상까지 올라갈 수 있습니다. 탁 트인 구포를 한눈에 볼 수 있어요.. 주간 뿐 아니라 야간에도 가족과 함께, 아이와 함께 가볼만한 야경 명소입니다.", "links": [{"label": "지도 보기", "url": "https://map.naver.com/p/entry/place/1512480921?lng=129.0007648&lat=35.1974574&placePath=%2Fhome%3Fentry%3Dpll&c=15.00,0,0,0,dh"}], "level": 1, "km": 3.1, "kmNote": "", "addr": ["부산 북구 구포동 779-3"], "org": "부산", "region": "부산", "lat": 35.19746, "lng": 129.00076, "geo": "exact", "mins": 60, "parking": [{"t": "구포무장애숲길주차장(들머리)", "src": "https://www.ktriptips.com/kor/leisure/2755696"}], "toilet": [{"t": "화장실 있음(위치 미기재)", "src": "https://www.ktriptips.com/kor/leisure/2755696"}], "barrierFree": [{"t": "구포 무장애 숲길  도심에서 노약자, 장애인, 임산부 어린이 누구나 더불의 산림의 혜택을 누릴 수 있는 숲길입니다.", "src": null}, {"t": "입구에서 정상까지 데크길이 조성되어 있어서 유모차와 휠체어로도 정상까지 올라갈 수 있습니다.", "src": null}], "tags": ["무장애", "데크길", "가족·어린이"], "notice": [{"t": "상시 개방, 입장료 없음", "src": "https://www.ktriptips.com/kor/leisure/2755696"}], "start": {"name": "구포 무장애숲길 입구(주차장)", "addr": "부산 북구 낙동북로 722(구포동)"}}, {"id": 34, "name": "안산 순환형 무장애 자락길", "sub": "", "desc": "안산 자락길은 평평하게 만든어진 순환형 숲길로 보행약자들도 쉽게 다녀갈 수 있습니다. 구간별로 아까시숲, 메타세쿼이아숲, 잣나무숲 등 다양한 숲을 즐길 수 있으며, 동서남북 방향에 따라 한강, 인왕산, 북한산, 청와대 등 다양한 조망도 즐길 수 있습니다. 지락길 인근에는 북카페와 전망대, 연희숲속쉼터 등이 있으며, 지하철 3호선 홍제 인근 서대문구청과 서대문자연사박물관, 3호선 독립문역 독립공원에서 무장애 코스가 시작됩니다. 총 길이는7.0km이며, 2시간~2시간 30분 소요됩니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/xXrD8vXy"}], "level": 1, "km": 7.0, "kmNote": "", "addr": ["1. 서대문자연사박물관 : 서울 서대문구 연희동 141-52", "2. 서대문 독립공원 : 서울 서대문구 현저동 101"], "org": "서대문구청 푸른도시과", "region": "서울", "lat": 37.5745, "lng": 126.958, "geo": "approx", "mins": 140, "parking": [{"t": "전용 주차 불가(대중교통 이용 권장)", "src": "https://www.ktriptips.com/kor/tourspot/2661502"}], "toilet": [{"t": "북카페 쉼터 부근, 정상 갈림길 부근 등 코스 중 화장실", "src": "https://www.koreatodo.com/mountain-ansan-jarak-gil-trail"}], "barrierFree": [{"t": "안산 순환형 무장애 자락길  안산 자락길은 평평하게 만든어진 순환형 숲길로 보행약자들도 쉽게 다녀갈 수 있습니다.", "src": null}, {"t": "지락길 인근에는 북카페와 전망대, 연희숲속쉼터 등이 있으며, 지하철 3호선 홍제 인근 서대문구청과 서대문자연사박물관, 3호선 독립문역 독립공원에서 무장애 코스가 시작됩니다.", "src": null}], "tags": ["무장애", "전망"], "notice": null, "start": {"name": "서대문 독립공원(독립문역 4·5번 출구) 입구", "addr": "서울 서대문구 통일로 251(독립공원)"}}, {"id": 35, "name": "큰마을저수지 둘레길", "sub": "", "desc": "울산 동구 큰마을 저수지 산림공원내 조성된 숲길입니다. 염포산의 정기를 품운 큰마을 저수지 둘레길은 자연학습지구, 경관지구, 치유지구, 슾비지구,숲테마지구, 둘레길까지 여섯개 구간으로 나누어져 있어 걷는 즐거움이 다채로운 도심속 숲길입니다. 어린이들이 마음껏 뛰어 놀 수 있는 숲속놀이터, 편백나무 산림욕장, 데크길 등이 마련되어 있어 사랑하는 가족, 친구들과 자연치유의 시간을 경험할 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/FIgyn02n"}], "level": 1, "km": 2.0, "kmNote": "", "addr": ["큰마을저수지 둘레길 : 울산 서부동 614-3", "- 주차장 : 울산 동구 서부동 257-47"], "org": "울산 동구청", "region": "울산", "lat": 35.5153, "lng": 129.412, "geo": "approx", "mins": 40, "parking": [{"t": "주차장 : 울산 동구 서부동 257-47", "src": null}, {"t": "저수지 입구 소규모 주차장(벚꽃철 혼잡)", "src": "https://sanisanee.co.kr/367"}], "toilet": [{"t": "간이화장실 있음", "src": "https://sanisanee.co.kr/367"}], "barrierFree": null, "tags": ["데크길", "가족·어린이", "바다·호수", "곶자왈·편백"], "notice": null, "start": {"name": "큰마을저수지 산림공원 입구(주차장 연결)", "addr": "울산 동구 서부동 614-3"}}, {"id": 36, "name": "솔마루길 울산대공원 코스", "sub": "", "desc": "솔마루 길에서는 아름나운 소나무 숲을 만날 수 있는데요 솔마루는 솔(소나무) +마루(산 능선,꼭대기)를 뜻하는 의미 그대로 도심속 산 능선을 따라 솔향 가득한 코스가 조성되어 있습니다. 특히 능선을 잇는 완만한 숲길과 함께 데크길, 야자수 매트길등이 조성되어 있어 걷기에 입문하는 분들도 도전할 수 있는 코스입니다. 울산의 상징인 고래, 범고래, 대왕고래등 다양한 고래 모양의 이정표도 솔마루 길의 재미입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/xFpfoBBt"}], "level": 2, "km": 5.4, "kmNote": "", "addr": ["코스 시점 : 울산 남구 선암동 685-3"], "org": "울산 남구청", "region": "울산", "lat": 35.523, "lng": 129.326, "geo": "approx", "mins": 120, "parking": [{"t": "솔마루길 주차 가능(무료)", "src": "https://www.ktriptips.com/eng/leisure/1835373"}], "toilet": [{"t": "화장실 있음(위치 미기재), 울산대공원 내 화장실", "src": "https://www.ktriptips.com/eng/leisure/1835373"}], "barrierFree": null, "tags": ["데크길", "소나무·금강송"], "notice": [{"t": "24시간 개방, 야간 이용 비권장, 입장료 무료", "src": "https://www.ktriptips.com/eng/leisure/1835373"}], "start": {"name": "솔마루길 울산대공원 코스 시점", "addr": "울산 남구 선암동 685-3"}}, {"id": 37, "name": "만수산 무장애 숲길", "sub": "", "desc": "인천 남동구의 대표적인 원도심인 만수동에 위치한 해발 201m의 만수산을 둘러싼 무장애 숲길은 2,751m의 계단없는 무장애 등산로가 설치되어 있어 교통약자도 안전하게 정상까지 등반할 수 있는 숲길입니다. 숲길을 걸으며, 만수8경을 보며 바람, 숲, 나무, 돌 등의 자연을 즐길 수 있으며, 정상 전망대에서는 남동구 전역과 서해바다 및 인천대교까지 조망할 수 있고 일출과 일몰 모두를 볼 수 있어 연말 연시 많은 지역민이 즐겨찾는 명소입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5teUt5VF"}], "level": 1, "km": 2.7, "kmNote": "", "addr": ["인천 남동구 만수2동 산 1-2", "만부제2호공영주차장 : 인천 남동구 만수동 5-426"], "org": "인천광역시(남동구)", "region": "인천", "lat": 37.453, "lng": 126.74, "geo": "approx", "mins": 50, "parking": [{"t": "만부제2호공영주차장 : 인천 남동구 만수동 5-426", "src": null}, {"t": "만부 제2호 공영주차장(무료), 입구까지 도보 잠시", "src": "https://v.daum.net/v/ZydVtBDxP9"}], "toilet": null, "barrierFree": [{"t": "만수산 무장애 숲길  인천 남동구의 대표적인 원도심인 만수동에 위치한 해발 201m의 만수산을 둘러싼 무장애 숲길은 2,751m의 계단없는 무장애 등산로가 설치되어 있어 교통약자도 안전하게 정상까지 등반할 수 있는 숲길입니다.", "src": null}], "tags": ["무장애", "전망", "바다·호수"], "notice": [{"t": "상시 개방, 휴무일 없음", "src": "https://access.visitkorea.or.kr/ms/detail.do?cotId=a27ffdb6-61e3-46c1-89a5-4e06b5618080"}], "start": {"name": "만수산 무장애나눔길 입구", "addr": "인천 남동구 만수로111번길 38-1(만수동)"}}, {"id": 38, "name": "도초 팽나무 숲길", "sub": "환상의 정원", "desc": "드라마 이상한나라 우영우로 더욱 유명해진 팽나무, 수령 70년 이상의 팽나무를 전국에서 기증받아 조성된 명품숲길을 소개합니다. 신안 팽나무 숲길은 화포 선착장에서 수국공원까지 이어지는 3km넘는 수로둑길을 따라 기증받은 팽나무 760그루와 수국 등 다양한 초화들이 함께 식재되어 있어 환상적인 풍광을 선사합니다. 지역 주민, 단체, 공무원들이 숲 지킴이, 정원해설사, 로컬가이드로 활동하고 있고 있는 점은 숲길을 통한 '지역경제'에 대한 관점을 넓혀줄 것입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5E3H4FRe"}], "level": 1, "km": 4.0, "kmNote": "", "addr": ["전남 신안군 도초면 발매리 1437"], "org": "신안군", "region": "전남", "lat": 34.72, "lng": 125.95, "geo": "approx", "mins": 80, "parking": null, "toilet": null, "barrierFree": null, "tags": [], "notice": [{"t": "섬 방문: 목포연안여객선터미널에서 쾌속선 약 1시간, 차도선 차량 선적 가능", "src": "https://www.wikitree.co.kr/articles/1139420"}], "start": {"name": "화도선착장(도초도)", "addr": "전남 신안군 도초면 발매리 1437"}}, {"id": 39, "name": "지리산둘레길", "sub": "산동-주천(21코스)", "desc": "지리산둘레길 중 산동-주천구간은 전남 구례와 전북 남원을 잇는 숲길입니다. 총 구간 15.9km 중 현천마을과 밤재까지는 약 7km 구간으로, 숲길 구석구석 마을과 숲, 역사를 만나볼 수 있습니다. 특히, 봄에는 복수초와 산수유를 따라 걸으며 따스한 햇살을 만끽할 수 있고, 가을에는 구불구불한 임도길을 따라 밤재에 오르다 보면 전라남도와 전라북도의 경계에서 알록달록한 단풍을 즐길 수 있습니다.", "links": [{"label": "주천면행정복센터", "url": "https://naver.me/FeOCl402"}], "level": 3, "km": 7.0, "kmNote": "", "addr": ["전북 남원시 주천면 배덕리~전남 구례군 산동면 계천리", "주천시점(주천면행정복지센터) : 전북 남원시 주천면 정령치로 61", "산동종점(산동면사무소) : 전남 구례군 산동면 원촌리 186"], "org": "서부지방산림청 산림경영과", "region": "전북", "lat": 35.31586, "lng": 127.43942, "geo": "sourced", "mins": 180, "parking": null, "toilet": null, "barrierFree": null, "tags": ["역사·문화"], "notice": null, "start": {"name": "산동면사무소(지리산둘레길 산동-주천 시점)", "addr": "전남 구례군 산동면 원촌길 114"}, "geoSrc": "https://info.koreacharts.com/tour/2788066/contents.html"}, {"id": 40, "name": "방화동 생태길", "sub": "", "desc": "방화동 생태길은 장수읍 덕산리 장안산 군립공원 입구부터 방화동 가족휴가촌까지의 구간입니다. 맑은 계곡을 따라 돌탑길을 걸으며 장안산의 보호종과 멸종위기종 식물, 덕산계곡의 야생화와 용소, 암각바둑판 바위 등을 볼 수 있습니다. 110m높이에서 떨어지는 인공의 방화폭포와 맨발 황톳길은 명품숲길을 걷는 재미를 더해줍니다.", "links": [{"label": "지도 보기", "url": "https://map.naver.com/p/entry/place/1525140021?lng=127.5309643&lat=35.5986367&placePath=%2Fhome%3Fentry%3Dplt&c=15.00,0,0,2,dh"}], "level": 2, "km": 10.0, "kmNote": "", "addr": ["전북 장수군 장수읍 덕산리 760"], "org": "장수", "region": "전북", "lat": 35.59864, "lng": 127.53096, "geo": "exact", "mins": 220, "parking": [{"t": "장안산군립공원주차장, 방화동가족휴가촌주차장(번암면 방화동로 778)", "src": "https://v.daum.net/v/20250826183117679"}], "toilet": null, "barrierFree": null, "tags": ["계곡", "가족·어린이"], "notice": [{"t": "방화폭포는 인공폭포로 오전·오후 1회씩 가동", "src": "https://v.daum.net/v/20250826183117679"}], "start": {"name": "장안산군립공원 입구 주차장", "addr": "전북 장수군 장수읍 덕산리 760"}}, {"id": 41, "name": "숫모르 편백 숲길", "sub": "", "desc": "한라산 자락 해발 600~700m에 위치한 숫모르 편백숲길은 제주시 한라생태숲-개오리오름-절물자연휴양림-노루생태원-거친오름을 연결하는 숲길입니다. 복수초, 산수국, 박새, 일색고사리 등 난대성 식물에서 한라산 고산식물을 볼 수 있으며, 큰오색딱다구리, 운문산 반딧불이, 노루가 뒤어 노는 제주만의 특색있는 생태계를 볼 수 있습니다. 1970년대 산림녹화 사업으로 조성되어 편백림은 도민과 관광객들이 현재까지 피톤치드를 맘껏 만낄할 수 있는 산림 치유의 쉼터가 되고 있습니다.", "links": [{"label": "한라생태숲", "url": "https://naver.me/GNBsAunP"}], "level": 3, "km": 8.0, "kmNote": "편도", "addr": ["제주 제주시 용강동 산 14-1"], "org": "제주특별자치도", "region": "제주", "lat": 33.43194, "lng": 126.59823, "geo": "sourced", "mins": 200, "parking": [{"t": "한라생태숲 주차장 (무료)", "src": "https://www.ktriptips.com/kor/tourspot/802844"}], "toilet": [{"t": "한라생태숲 내 화장실 있음", "src": "https://www.ktriptips.com/kor/tourspot/802844"}], "barrierFree": null, "tags": ["휴양림·숲체원", "곶자왈·편백"], "notice": [{"t": "한라생태숲 운영 하절기 09~18시·동절기 09~17시(입장마감 1시간 전), 입장 무료", "src": "https://www.ktriptips.com/kor/tourspot/802844"}], "start": {"name": "한라생태숲 (숫모르편백숲길 들머리)", "addr": "제주 제주시 516로 2596 (용강동 산 14-1)"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/802844"}, {"id": 42, "name": "사려니숲길", "sub": "한라산둘레길 7구간", "desc": "제주시 숨은 비경 31 중 하나인 사려니숲길은 한라산둘레길 7구간으로 숲길 양쪽을 따라 졸참나무, 서어나무, 때죽나무, 산딸나무 등 다양한 수종이 자라는 울창한자연림이 넓게 펼쳐져 있으며, 오소리와 제주족제비를 비롯한 포유류와 다양한 파충류 등 다양한 동물도 서식하고 있어 자연과 하나되는 에코힐링을 체험할 수 있는 최적의 '치유의 숲'을 체험할 수 있습니다. 비자림로 입구에서부터 시험림길 삼거리까지 4.8km의 제주시 코스 내에서 숲길 곳곳 숯가마터 등의 흔적을 통해 제주의 산림목축문화를 엿볼 수 있으며, 천연림과 인공림이 어우러진 신성한 생명의 공간이자 자연생태문화를 체험하는 소통의 공간이기도합니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5xlniiza"}], "level": 2, "km": 4.8, "kmNote": "", "addr": ["한라산둘레길 숲길센터 : 제주 서귀포시 표선면 가시리 산 158-4", "사려니숲길 입구 : 조천읍 교래리 산 137-1", "주차장 : 제주 제주시 봉개동 2750-2"], "org": "제주시 공원녹지과", "region": "제주", "lat": 33.4583, "lng": 126.6206, "geo": "approx", "mins": 110, "parking": [{"t": "주차장 : 제주 제주시 봉개동 2750-2", "src": null}, {"t": "붉은오름 자연휴양림 주차장 이용 (무료)", "src": "https://xn--ok0b236bp0a.com/place/15544"}], "toilet": [{"t": "비자림로 입구 좌측 및 코스 중 2곳 (천미천 인근 생태화장실)", "src": "https://bebeyam.com/뚜벅이-여행기37-제주-사려니숲길-후기-초심자-탐방/"}], "barrierFree": null, "tags": [], "notice": [{"t": "이용 09:00~17:00, 입장 무료. 한남 출입구(사려니오름)는 난대산림연구소 사전예약 필요", "src": "https://ko.wikipedia.org/wiki/사려니숲길"}], "start": {"name": "사려니숲길 비자림로 입구", "addr": "제주 제주시 조천읍 교래리 산 137-1"}}, {"id": 43, "name": "교래자연 휴양림 곶자왈 숲길", "sub": "", "desc": "화산이 폭발하면서 형성된 곶자왈을 마음껏 감상할 수 있는 명품숲길입니다. 다듬어지지 않은 자연 그대로의 자연과 바위, 나무가 헝클어진 거친 느낌을 경험할 수 있는 숲길입니다. 아참! 성인기준 1,000원의 입장료가 있어요~", "links": [{"label": "지도 보기", "url": "https://naver.me/x1egVgaY"}], "level": 2, "km": 3.0, "kmNote": "", "addr": ["제주 제주시 조천읍 교래리 산 119(남조로 2023)"], "org": "제주시", "region": "제주", "lat": 33.45136, "lng": 126.65671, "geo": "sourced", "mins": 70, "parking": [{"t": "휴양림 주차장 이용 가능", "src": "https://www.ktriptips.com/eng/tourspot/3530486"}], "toilet": null, "barrierFree": null, "tags": ["휴양림·숲체원", "곶자왈·편백"], "notice": [{"t": "입장료 어른 1,000원·청소년/군인 600원, 하절기 07~16시·동절기 07~15시", "src": "https://www.ktriptips.com/eng/tourspot/3530486"}], "start": {"name": "교래자연휴양림 입구", "addr": "제주 제주시 조천읍 남조로 2023 (교래리 산 119)"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/25378"}, {"id": 44, "name": "산양 큰엉곳자왈 숲길", "sub": "", "desc": "제주지역 4대 곶자왈 중 하나인 한경, 안덕 곶자왈에 조성된 숲길입니다. 산엉큰엉곳은 평지가 아닌 협곡이 있는 숲을 뜻하며 크게 달구지길과 숲길탐방로로 나뉘어져 있습니다. 옛길을 토대로 소와 말이 달구지를 끌고가는 모습도 직접 볼 수 있으며 현대적인 감성에 맞게 동화속 숲속의 작은 마을을 재구현한 포토존도 있습니다. 요정들을 만날 것 같은 숲으로 여러분들을 초대합니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/GA1Tyglt"}], "level": 2, "km": 5.0, "kmNote": "", "addr": ["제주 제주시 한경면 청수리 956-6"], "org": "제주시", "region": "제주", "lat": 33.29073, "lng": 126.25031, "geo": "sourced", "mins": 110, "parking": [{"t": "전용 주차장 (무료)", "src": "https://www.ktriptips.com/kor/tourspot/2948051"}], "toilet": null, "barrierFree": null, "tags": ["역사·문화", "곶자왈·편백"], "notice": [{"t": "유료 입장(대인 8,000원·소인 6,000원, 변동 가능), 09:30~18:00(입장마감 17:00)", "src": "https://www.ktriptips.com/kor/tourspot/2948051"}], "start": {"name": "산양큰엉곶 입구", "addr": "제주 제주시 한경면 청수리 956-6"}, "geoSrc": "https://www.ktriptips.com/kor/tourspot/2948051"}, {"id": 45, "name": "머체왓 숲길", "sub": "", "desc": "머체왓은 머체(돌)로 이루어진 밭(왓)이라는데서 붙여진 명칭으로 머체왓 숲길 입구는 울창한 나무들이 가득해서 게임의 던전 입구를 연상하게 합니다. 입구는 좁지만 숲길로 들어서면 넓고 웅장한 원시림이 펼쳐집니다. 입구 하나를 두고 꼭 다른 세상에 들어온 것 같은 느낌을 받을 수 있습니다. 야자매트나 데크길은 없고 이끼 가득한 돌들이 있으니 등산화와 긴바지를 챙겨주세요. 머체왓에는 마을에서 운영하는 족욕카페가 있어 걷고 내려와 족욕과 한방약차를 경험하면 더욱 좋습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5rZAxMFG"}], "level": 3, "km": 16.0, "kmNote": "", "addr": ["머체왓숲길 방문객지원센터 : 제주 서귀포시 남원읍 한남리 1622-3 (서성로 755)"], "org": "서귀포", "region": "제주", "lat": 33.33058, "lng": 126.67382, "geo": "sourced", "mins": 400, "parking": [{"t": "방문객센터 무료 주차장 (개방시간 홈페이지 확인)", "src": "https://xn--ok0b236bp0a.com/place/26448"}], "toilet": [{"t": "방문객센터 편의시설 화장실 있음", "src": "https://xn--ok0b236bp0a.com/place/26448"}], "barrierFree": null, "tags": ["데크길"], "notice": [{"t": "09:00~18:00(악천후 조기마감), 반려동물·자전거·드론 반입 불가", "src": "https://xn--ok0b236bp0a.com/place/26448"}], "start": {"name": "머체왓숲길 방문객지원센터", "addr": "제주 서귀포시 남원읍 서성로 755 (한남리 1622-3)"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/26448"}, {"id": 46, "name": "백제부흥군길 3코스", "sub": "대련사-대흥 의좋은형제공원", "desc": "백제부흥전쟁의 중심지였던 임존성을지나는 백제부흥길 3코스는 광시한우테마공원을 시작으로 의좋은 형제 마을까지 이어지는 숲길입니다. 예산군 광시면의 조용한 마을의 정취를 느낄 수 있으며 백제 시대 창건한 대련사를 통해 불교 역사도 만나볼 수 있습니다. 숲길을 따라 임존성에 오르면 웅장한 성벽과 예당호가 한눈에 내려다보이는 전망이 있습니다. 코스 내에는 봉수산 자연휴양림이 위치해 편안한 휴양을 할 수 있으며 대흥슬로시티 의좋은 형제마을에 다다릅니다. (대련사~대흥 의좋은 형제공원 : 5.1km)", "links": [{"label": "코스", "url": "https://naver.me/xtWeb6LY"}, {"label": "시점(의좋은형제공원)", "url": "https://naver.me/Fslohfvq"}], "level": 2, "km": 5.1, "kmNote": "", "addr": ["의좋은형제공원 : 충남 예산군 대흥면 상중리 276(의좋은형제길3)"], "org": "예산군청", "region": "충남", "lat": 36.60653, "lng": 126.7922, "geo": "sourced", "mins": 110, "parking": [{"t": "공원 주차장 (소형차 약 40대)", "src": "https://view.nate.com/travel/view/412965/"}], "toilet": null, "barrierFree": null, "tags": ["전망", "휴양림·숲체원", "역사·문화"], "notice": null, "start": {"name": "의좋은형제공원", "addr": "충남 예산군 대흥면 의좋은형제길 3 (상중리 276)"}, "geoSrc": "https://xn--ok0b236bp0a.com/place/24702"}, {"id": 47, "name": "청풍호 자드락길", "sub": "얼음골 생태길", "desc": "청풍호 자드락길은 금수산의 산길과 능강계곡에서 발원한 청풍호반의 호수를 따라 걸을 수 있는 숲길입니다. 얼음골생태길 5.2km로 한여름에도 얼음이 생기는 빙형을 볼 수 있는 신비한 곳입니다. 능강계곡을 따라 울창한 숲 사이를 올라가며 볼 수 있는 계곡은 바닥까지 비칠 정도로 맑으며, 계곡 양옆으로 깎아 세운듯한 절벽이 있어 절경을 보는듯 합니다. 옛사람들은 이곳을 능강구곡으로 지정해 아름다운 정취를 즐겼다고 합니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/56INizvC"}], "level": 2, "km": 5.2, "kmNote": "", "addr": ["충북 제천시 수산면 능강리 217-8"], "org": "단양국유림관리소", "region": "충북", "lat": 36.99, "lng": 128.189, "geo": "approx", "mins": 120, "parking": [{"t": "능강교 주차장", "src": "https://kbmaeil.com/article/201309060077406"}], "toilet": null, "barrierFree": null, "tags": ["계곡", "바다·호수"], "notice": null, "start": {"name": "능강교 (얼음골생태길 시점)", "addr": "충북 제천시 수산면 능강리 217-8"}}, {"id": 48, "name": "보은군 속리산둘레길", "sub": "", "desc": "보은 속리산은 속세를 떠난 산이라고 하여 붙여진 이름이며, 속리산둘레길은 충북 보은과 괴산군, 경북 문경시와 상주시를 연결하는 속리산 권역의 약200km의 광대한 숲길입니다. 신라 진흥왕 때 의신조사가 창건한 천년고찰 법주사를 감싸고 있으며 고즈넉한 풍경과 아늑한 길을 따라 마을과 마을을 잇는 숲길입니다. 둘레길은 구병산 옛길, 말티재 넘는길, 달천 들녘길, 금단산 신선길, 꼬부랑길 순환로 총 5개 구간으로 되어있으며, 경사가 완만하여 노인, 어린아이도 함께 걸을 수 있는 길부터 가뿐 숨을 몰아 쉬게 할만큼 땀과 함께 내면의 강인함을 쏟게하는 길까지 다양한 연령대가 함께 즐길 수 있는 길입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/58HsBqGI"}], "level": 4, "km": 63.49, "kmNote": "", "addr": ["충북 보은군 속리산면 상판리 210-2(속리산로 743)"], "org": "보은군", "region": "충북", "lat": 36.505, "lng": 127.812, "geo": "approx", "mins": 1900, "parking": null, "toilet": null, "barrierFree": null, "tags": ["가족·어린이", "역사·문화"], "notice": null, "start": {"name": "속리산둘레길 시점 (속리산면 상판리)", "addr": "충북 보은군 속리산면 속리산로 743 (상판리 210-2)"}}, {"id": 49, "name": "산막이 옛길", "sub": "", "desc": "산막이옛길은 녹음과 괴산호를 다라 놓은 7km의 산책로와 등잔봉,천장봉을 잇는 2개의 등산로가 위치하여 남녀노소 누구나 다양한 코스를 이용할 수 있는 명품숲길입니다. 칠성면 사은리 사오랑마을에서 산막이마을까지 연결된 옛길을 친환경공법으로 환경훼손을 최소화하여 복원한 산책로입니다. 예식릉ㄹ 따라 오르는 동안에는 호랑이굴, 여우비 바위굴, 앉은뱅이 약수 등 다양한 사연과 이야기를 입은 나무와 바위를 볼 수 있으며, 산막이 옛길 9경의 풍경에 심취할 수 있습니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/5mgGYFIA"}], "level": 3, "km": 7.0, "kmNote": "", "addr": ["충북 괴산군 칠성면 사은리 523"], "org": "괴산군", "region": "충북", "lat": 36.785, "lng": 127.85, "geo": "approx", "mins": 180, "parking": [{"t": "산막이옛길 주차장 (유료, 소형 약 3,000원/일), 주말 조기 만차", "src": "https://brunch.co.kr/@qrssa/5273"}], "toilet": [{"t": "입구 인근 화장실 있음", "src": "https://www.hangyo.com/mobile/article.html?no=66932"}], "barrierFree": null, "tags": ["가족·어린이", "역사·문화"], "notice": [{"t": "입장 무료, 유람선 별도 요금(대인 7,000원), 09:00~17:00", "src": "https://www.ktriptips.com/kor/leisure/1948361"}], "start": {"name": "산막이옛길 주차장·입구 (괴산수력발전소 옆)", "addr": "충북 괴산군 칠성면 사은리 523"}}, {"id": 50, "name": "의림지 한방 치유숲길", "sub": "비룡담 저수지 둘레 데크길", "desc": "충북 제천하면 가장 먼저 떠오르는 곳이 바로 의림지입니다. 우리나라 국민이라면 역사책에서 한번쯤은 꼭 들어보았을 역사적인 지역이지요. 의림지 한방 치유 숲길은 제2의림지 수변 일원에 조성된 숲길로 비룡담 저수지를 따라 데크길이 마련되어 있어 누구나 산책할 수 있도록 조성된 무장애 길입니다. 산림치유효과를 극대화할 수 있도록 정적이면서도 편안한 분위기가 큰 장점인 명품숲길입니다.", "links": [{"label": "지도 보기", "url": "https://naver.me/xb7wkyoJ"}], "level": 2, "km": 7.54, "kmNote": "", "addr": ["(용두산산림욕장 주차장1) 충북 제천시 송학면 도화리 992-5"], "org": "제천", "region": "충북", "lat": 37.195, "lng": 128.22, "geo": "approx", "mins": 170, "parking": [{"t": "(용두산산림욕장 주차장1) 충북 제천시 송학면 도화리 992-5", "src": null}, {"t": "용두산 산림욕장 주차장 이용 가능", "src": "https://www.ktriptips.com/kor/tourspot/1683871"}], "toilet": [{"t": "용두산 산림욕장 화장실 있음(남녀 구분)", "src": "https://www.ktriptips.com/kor/tourspot/1683871"}], "barrierFree": [{"t": "의림지 한방 치유 숲길은 제2의림지 수변 일원에 조성된 숲길로 비룡담 저수지를 따라 데크길이 마련되어 있어 누구나 산책할 수 있도록 조성된 무장애 길입니다.", "src": null}], "tags": ["무장애", "데크길", "역사·문화", "바다·호수"], "notice": null, "start": {"name": "용두산 산림욕장 주차장1", "addr": "충북 제천시 송학면 도화리 992-5"}}]</script>
+<script>
+(() => {
+'use strict';
+const TRAILS = JSON.parse(document.getElementById('trail-data').textContent);
+const REGION_ORDER = ['서울','인천','경기','강원','충북','충남','대전','전북','전남','경북','경남','대구','울산','부산','제주'];
+const LEVEL_LABEL = {1:'매우 쉬움',2:'쉬움',3:'보통',4:'어려움',5:'매우 어려움'};
+const LEN_GROUPS = [
+  {k:'s', label:'3km 이하', test:km=>km<=3},
+  {k:'m', label:'3~7km', test:km=>km>3&&km<=7},
+  {k:'l', label:'7~12km', test:km=>km>7&&km<=12},
+  {k:'xl', label:'12km 초과', test:km=>km>12},
+];
+const TAG_ORDER = ['주차장 확인','화장실 확인','무장애','데크길','가족·어린이','계곡','전망','바다·호수','소나무·금강송','곶자왈·편백','휴양림·숲체원','역사·문화'];
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* ---------- 저장소 ---------- */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('trail50:'+k); return v==null ? d : JSON.parse(v); }catch{ return d; } },
+  set(k, v){ try{ localStorage.setItem('trail50:'+k, JSON.stringify(v)); }catch{} }
+};
+let fav = new Set(store.get('fav', []));
+let done = new Set(store.get('done', []));
+let memos = store.get('memos', {});
+const saveFav = () => store.set('fav', [...fav]);
+const saveDone = () => store.set('done', [...done]);
+const saveMemos = () => store.set('memos', memos);
+
+const state = {
+  q:'', tab:'all', regions:new Set(), levels:new Set(), lens:new Set(), tags:new Set(),
+  sort: store.get('sort','default'), view: store.get('view', 'grid'), current:null, list:[], pos:null
+};
+if(state.sort==='near') state.sort='default';
+
+/* ---------- 유틸 ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CHO = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+const toCho = s => [...s].map(ch => { const c = ch.charCodeAt(0) - 0xAC00; return (c>=0 && c<11172) ? CHO[Math.floor(c/588)] : ch; }).join('');
+const isChoOnly = s => /^[ㄱ-ㅎ\s]+$/.test(s);
+const norm = s => s.toLowerCase().replace(/\s+/g,'');
+const regexEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function hl(text, q){
+  const safe = esc(text);
+  if(!q || isChoOnly(q)) return safe;
+  const terms = q.trim().split(/\s+/).filter(Boolean).map(t => esc(t)).map(regexEsc);
+  if(!terms.length) return safe;
+  return safe.replace(new RegExp('('+terms.join('|')+')','gi'), '<mark>$1</mark>');
+}
+function fmtMins(m){
+  if(m < 60) return `약 ${m}분`;
+  const h = Math.floor(m/60), r = m%60;
+  return `약 ${h}시간${r?` ${r}분`:''}`;
+}
+function distKm(a, b){
+  const R=6371, rad=x=>x*Math.PI/180, dLat=rad(b.lat-a.lat), dLng=rad(b.lng-a.lng);
+  const h=Math.sin(dLat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+const fmtDist = k => k < 10 ? k.toFixed(1)+'km' : Math.round(k).toLocaleString('ko-KR')+'km';
+const fmtKm = n => (Math.round(n*100)/100).toLocaleString('ko-KR');
+const lvDots = n => `<span class="lv" aria-label="이용자레벨 ${n}">${[1,2,3,4,5].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+function cleanAddr(a){
+  let s = a.replace(/^\s*(\d+\.|-)\s*/,'');
+  if(s.includes(':')) s = s.split(':').pop();
+  s = s.replace(/^\s*\([^)]*\)\s*/,'').replace(/\([^)]*\)\s*$/,'').trim();
+  return s;
+}
+TRAILS.forEach(t => {
+  const NEG = /불가|없음|어려움/;
+  t.parkOK = !!(t.parking && t.parking.some(x=>!NEG.test(x.t)));
+  t.toiletOK = !!(t.toilet && t.toilet.some(x=>!NEG.test(x.t)));
+  t.facil = [t.parkOK?'주차장 확인':'', t.toiletOK?'화장실 확인':''].filter(Boolean);
+  t.hay = norm([t.name,t.sub,t.desc,t.region,t.org,...t.addr,...t.tags,t.start?.name||'',t.start?.addr||''].join(' '));
+  t.cho = toCho(norm(t.name+t.sub));
+});
+
+let toastTimer;
+function toast(msg){ const el=$('#toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2000); }
+async function copyText(t, msg='복사했어요'){
+  try{ await navigator.clipboard.writeText(t); toast(msg); }
+  catch{ const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast(msg); }
+}
+const trailUrl = t => location.origin + location.pathname + '#trail-' + t.id;
+async function share(title, text, url){
+  if(navigator.share){ try{ await navigator.share({title, text, url}); return; }catch(e){ if(e.name==='AbortError') return; } }
+  copyText(url, '링크를 복사했어요');
+}
+
+/* ---------- 테마 ---------- */
+const mq = matchMedia('(prefers-color-scheme: dark)');
+let mode = store.get('mode','auto'), accent = store.get('accent','forest');
+function applyTheme(){
+  const dark = mode==='dark' || (mode==='auto' && mq.matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  document.documentElement.dataset.accent = accent;
+  $$('#modeSeg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode===mode));
+  $$('#accentSw .sw').forEach(b => b.setAttribute('aria-pressed', b.dataset.accent===accent));
+  updateTiles();
+  requestAnimationFrame(()=> document.querySelector('meta[name=theme-color]').setAttribute('content', getComputedStyle(document.documentElement).getPropertyValue('--hero1').trim()));
+}
+mq.addEventListener?.('change', applyTheme);
+$('#modeSeg').addEventListener('click', e => { const b=e.target.closest('button'); if(!b) return; mode=b.dataset.mode; store.set('mode',mode); applyTheme(); });
+$('#accentSw').addEventListener('click', e => { const b=e.target.closest('.sw'); if(!b) return; accent=b.dataset.accent; store.set('accent',accent); applyTheme(); });
+
+/* 팝오버 */
+function openPop(pop, anchor){
+  closePops();
+  const r = anchor.getBoundingClientRect();
+  pop.classList.add('open');
+  const w = pop.offsetWidth;
+  pop.style.top = (r.bottom + 8) + 'px';
+  pop.style.left = Math.max(10, Math.min(innerWidth - w - 10, r.right - w)) + 'px';
+  anchor.setAttribute('aria-expanded','true');
+  popY = scrollY;
+}
+let popY = 0;
+function closePops(){ $$('.pop.open').forEach(p=>p.classList.remove('open')); $$('[aria-haspopup]').forEach(b=>b.setAttribute('aria-expanded','false')); }
+$('#themeBtn').addEventListener('click', e => { e.stopPropagation(); $('#themePop').classList.contains('open') ? closePops() : openPop($('#themePop'), e.currentTarget); });
+$('#moreBtn').addEventListener('click', e => { e.stopPropagation(); $('#morePop').classList.contains('open') ? closePops() : openPop($('#morePop'), e.currentTarget); });
+document.addEventListener('click', e => { if(!e.target.closest('.pop')) closePops(); });
+addEventListener('resize', closePops); addEventListener('scroll', ()=>{ if(Math.abs(scrollY-popY)>40) closePops(); }, {passive:true});
+
+/* ---------- 필터 UI ---------- */
+function regionCounts(){ const c={}; TRAILS.forEach(t=>c[t.region]=(c[t.region]||0)+1); return c; }
+function buildFilters(){
+  const rc = regionCounts();
+  const regions = REGION_ORDER.filter(r=>rc[r]).concat(Object.keys(rc).filter(r=>!REGION_ORDER.includes(r)));
+  $('#fRegion').innerHTML = regions.map(r=>`<button class="chip" data-region="${esc(r)}" aria-pressed="false">${esc(r)} <small>${rc[r]}</small></button>`).join('');
+  const lc={}; TRAILS.forEach(t=>lc[t.level]=(lc[t.level]||0)+1);
+  $('#fLevel').innerHTML = [1,2,3,4,5].map(l=>`<button class="chip" data-level="${l}" aria-pressed="false">${lvDots(l)} ${l} ${LEVEL_LABEL[l]} <small>${lc[l]||0}</small></button>`).join('');
+  $('#fLen').innerHTML = LEN_GROUPS.map(g=>`<button class="chip" data-len="${g.k}" aria-pressed="false">${g.label} <small>${TRAILS.filter(t=>g.test(t.km)).length}</small></button>`).join('');
+  const tc={}; TRAILS.forEach(t=>[...t.facil,...t.tags].forEach(g=>tc[g]=(tc[g]||0)+1));
+  $('#fTag').innerHTML = TAG_ORDER.filter(g=>tc[g]).map(g=>`<button class="chip" data-tag="${esc(g)}" aria-pressed="false">${esc(g)} <small>${tc[g]}</small></button>`).join('');
+  $('#stRegion').textContent = regions.length;
+  $('#stKm').textContent = fmtKm(TRAILS.reduce((s,t)=>s+t.km,0));
+  $('#stTotal').textContent = TRAILS.length;
+}
+function toggleIn(set, v){ set.has(v) ? set.delete(v) : set.add(v); }
+$('#fRegion').addEventListener('click', e=>{ const b=e.target.closest('.chip'); if(!b) return; toggleIn(state.regions,b.dataset.region); render(); });
+$('#fLevel').addEventListener('click', e=>{ const b=e.target.closest('.chip'); if(!b) return; toggleIn(state.levels,+b.dataset.level); render(); });
+$('#fLen').addEventListener('click', e=>{ const b=e.target.closest('.chip'); if(!b) return; toggleIn(state.lens,b.dataset.len); render(); });
+$('#fTag').addEventListener('click', e=>{ const b=e.target.closest('.chip'); if(!b) return; toggleIn(state.tags,b.dataset.tag); render(); });
+$('#sort').value = state.sort;
+$('#sort').addEventListener('change', async e=>{
+  const v = e.target.value;
+  if(v==='near' && !state.pos){
+    const ok = await locate();
+    if(!ok){ e.target.value = state.sort; return; }
+  }
+  state.sort = v; if(v!=='near') store.set('sort',v); render();
+});
+$$('.seg [data-view]').forEach(b=>b.addEventListener('click',()=>{ state.view=b.dataset.view; store.set('view',state.view); render(); }));
+$('#mapToggle').addEventListener('click', ()=>{ state.view = state.view==='map' ? (store.get('lastView','grid')) : 'map'; store.set('view',state.view); render(); });
+$('.tabs').addEventListener('click', e=>{ const b=e.target.closest('.tab'); if(!b) return; state.tab=b.dataset.tab; render(); });
+$('#resetBtn').addEventListener('click', resetFilters);
+function resetFilters(){ state.regions.clear(); state.levels.clear(); state.lens.clear(); state.tags.clear(); state.q=''; $('#q').value=''; $('#searchBox').classList.remove('has'); state.tab='all'; render(); }
+$('#filterBtn').addEventListener('click', ()=>{ const f=$('#filters'); const o=!f.classList.contains('open'); f.classList.toggle('open',o); $('.toolbar').classList.toggle('fopen',o); $('#filterBtn').setAttribute('aria-expanded',o); });
+
+/* 검색 */
+let qTimer;
+$('#q').addEventListener('input', e=>{
+  $('#searchBox').classList.toggle('has', !!e.target.value);
+  clearTimeout(qTimer); qTimer=setTimeout(()=>{ state.q=e.target.value.trim(); render(); },120);
+});
+$('#qClear').addEventListener('click', e=>{ e.preventDefault(); $('#q').value=''; $('#searchBox').classList.remove('has'); state.q=''; render(); $('#q').focus(); });
+document.addEventListener('keydown', e=>{
+  if(e.key==='/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){ e.preventDefault(); $('#q').focus(); }
+  if(e.key==='Escape'){ if($('#overlay').classList.contains('open')) closeDetail(); else closePops(); }
+  if($('#overlay').classList.contains('open') && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
+    if(e.key==='ArrowRight') stepDetail(1); if(e.key==='ArrowLeft') stepDetail(-1);
+  }
+});
+
+/* ---------- 필터링/정렬 ---------- */
+function matches(t){
+  if(state.tab==='fav' && !fav.has(t.id)) return false;
+  if(state.tab==='done' && !done.has(t.id)) return false;
+  if(state.tab==='todo' && done.has(t.id)) return false;
+  if(state.regions.size && !state.regions.has(t.region)) return false;
+  if(state.levels.size && !state.levels.has(t.level)) return false;
+  if(state.lens.size && !LEN_GROUPS.some(g=>state.lens.has(g.k) && g.test(t.km))) return false;
+  if(state.tags.size && ![...state.tags].every(g=>t.tags.includes(g)||t.facil.includes(g))) return false;
+  const q = state.q;
+  if(q){
+    if(isChoOnly(q)){ if(!t.cho.includes(q.replace(/\s+/g,''))) return false; }
+    else if(!q.split(/\s+/).every(w => t.hay.includes(norm(w)) || t.cho.includes(norm(w)))) return false;
+  }
+  return true;
+}
+const collator = new Intl.Collator('ko');
+const SORTS = {
+  default:(a,b)=>a.id-b.id,
+  name:(a,b)=>collator.compare(a.name,b.name),
+  kmAsc:(a,b)=>a.km-b.km||a.id-b.id, kmDesc:(a,b)=>b.km-a.km||a.id-b.id,
+  lvAsc:(a,b)=>a.level-b.level||a.km-b.km, lvDesc:(a,b)=>b.level-a.level||b.km-a.km,
+  timeAsc:(a,b)=>a.mins-b.mins||a.id-b.id,
+  near:(a,b)=> state.pos ? distKm(state.pos,a)-distKm(state.pos,b) : a.id-b.id,
+  region:(a,b)=>REGION_ORDER.indexOf(a.region)-REGION_ORDER.indexOf(b.region)||a.id-b.id,
+};
+
+/* ---------- 렌더 ---------- */
+function card(t, i){
+  const q = state.q, f = fav.has(t.id), d = done.has(t.id);
+  const mainLink = t.links[0];
+  return `<article class="card${d?' done':''}" data-id="${t.id}" tabindex="0" style="animation-delay:${Math.min(i,12)*25}ms" aria-label="${esc(t.name)} 상세 보기">
+    <button class="star-corner" data-act="fav" aria-pressed="${f}" aria-label="즐겨찾기"><svg class="i"><use href="#i-star"/></svg></button>
+    <div class="body">
+      <div class="meta"><span class="tag reg">${esc(t.region)}</span><span class="tag num">${fmtKm(t.km)}km${t.kmNote?' '+esc(t.kmNote):''}</span><span class="tag">${lvDots(t.level)} Lv.${t.level}</span><span class="tag num">⏱ ${fmtMins(t.mins)}</span>${state.pos?`<span class="tag dist num">📍 ${fmtDist(distKm(state.pos,t))}</span>`:''}${d?'<span class="tag ok">✓ 완주</span>':''}</div>
+      <h3>${hl(t.name,q)}</h3>
+      ${t.sub?`<div class="sub">${hl(t.sub,q)}</div>`:''}
+      <p class="desc">${hl(t.desc,q)}</p>
+      <div class="addr"><svg class="i"><use href="#i-pin"/></svg><span>${hl(cleanAddr(t.addr[0]),q)}</span></div>
+      ${(t.tags.length||t.facil.length||t.notice)?`<div class="tagrow">${t.parkOK?'<span class="tg fc" title="주차장 있음">🅿️ 주차</span>':''}${t.toiletOK?'<span class="tg fc" title="화장실 있음">🚻 화장실</span>':''}${t.notice?'<span class="tg fc warn" title="방문 전 확인">⚠️ 확인</span>':''}${t.tags.slice(0,2).map(g=>`<span class="tg">#${esc(g)}</span>`).join('')}</div>`:''}
+    </div>
+    <div class="acts">
+      <button class="act vis" data-act="done" aria-pressed="${d}"><svg class="i"><use href="#i-check"/></svg><span>${d?'다녀옴':'완주 체크'}</span></button>
+      ${mainLink?`<a class="act map" href="${esc(mainLink.url)}" target="_blank" rel="noopener" data-act="link"><svg class="i"><use href="#i-map"/></svg><span>지도</span></a>`:''}
+    </div>
+  </article>`;
+}
+function render(){
+  let list = TRAILS.filter(matches).sort(SORTS[state.sort]||SORTS.default);
+  state.list = list;
+  const g = $('#grid'), isMap = state.view==='map';
+  g.className = 'grid' + (state.view==='list'?' list':'');
+  g.style.display = isMap && list.length ? 'none' : '';
+  g.innerHTML = isMap ? (list.length ? '' : emptyHTML()) : (list.length ? list.map(card).join('') : emptyHTML());
+  $('#mapWrap').classList.toggle('on', isMap && list.length>0);
+  if(isMap && list.length) drawMap(list);
+  // 탭/칩 상태
+  $$('.tab').forEach(b=>b.setAttribute('aria-pressed', b.dataset.tab===state.tab));
+  $$('#fRegion .chip').forEach(b=>b.setAttribute('aria-pressed', state.regions.has(b.dataset.region)));
+  $$('#fLevel .chip').forEach(b=>b.setAttribute('aria-pressed', state.levels.has(+b.dataset.level)));
+  $$('#fLen .chip').forEach(b=>b.setAttribute('aria-pressed', state.lens.has(b.dataset.len)));
+  $$('#fTag .chip').forEach(b=>b.setAttribute('aria-pressed', state.tags.has(b.dataset.tag)));
+  $$('.seg [data-view]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.view===state.view));
+  $('#mapToggle').setAttribute('aria-pressed', isMap);
+  if(state.view!=='map') store.set('lastView', state.view);
+  const nF = state.regions.size+state.levels.size+state.lens.size+state.tags.size;
+  const dot=$('#filterDot'); dot.textContent=nF; dot.classList.toggle('on', nF>0);
+  // 카운트
+  $('#cAll').textContent = TRAILS.length; $('#cFav').textContent = fav.size; $('#cDone').textContent = done.size; $('#cTodo').textContent = TRAILS.length-done.size;
+  const km = list.reduce((s,t)=>s+t.km,0);
+  $('#resultText').innerHTML = `<b class="num">${list.length}</b>곳 · 합계 <span class="num">${fmtKm(km)}</span>km${state.sort==='near'&&state.pos?' · 내 위치에서 가까운 순':''}`;
+  $('#activeFilters').innerHTML = (nF||state.q||state.tab!=='all') ? `<button class="linkbtn" data-reset>조건 초기화</button>` : '';
+  updateStats();
+}
+function emptyHTML(){
+  const msg = state.tab==='fav' && !fav.size ? '아직 즐겨찾기한 숲길이 없어요.<br>카드 오른쪽 위 ☆를 눌러 추가해 보세요.'
+    : state.tab==='done' && !done.size ? '아직 완주 체크한 숲길이 없어요.<br>다녀온 숲길에 “완주 체크”를 눌러 보세요.'
+    : '조건에 맞는 숲길이 없어요.<br>검색어나 필터를 바꿔 보세요.';
+  return `<div class="empty" style="grid-column:1/-1"><svg class="i"><use href="#i-tree"/></svg><p>${msg}</p><button class="btn" data-reset>조건 초기화</button></div>`;
+}
+document.addEventListener('click', e=>{ if(e.target.closest('[data-reset]')) resetFilters(); });
+function updateStats(){
+  $('#stDone').textContent = `${done.size} / ${TRAILS.length}`;
+  $('#stBar').style.width = (done.size/TRAILS.length*100)+'%';
+}
+
+/* 카드 상호작용 */
+$('#grid').addEventListener('click', e=>{
+  const c = e.target.closest('.card'); if(!c) return;
+  const id = +c.dataset.id; const a = e.target.closest('[data-act]');
+  if(a){
+    if(a.dataset.act==='link') return;
+    e.stopPropagation();
+    if(a.dataset.act==='fav') toggleFav(id);
+    if(a.dataset.act==='done') toggleDone(id);
+    return;
+  }
+  openDetail(id);
+});
+$('#grid').addEventListener('keydown', e=>{ if(e.key==='Enter' && e.target.classList.contains('card')) openDetail(+e.target.dataset.id); });
+function toggleFav(id){ toggleIn(fav,id); saveFav(); toast(fav.has(id)?'★ 즐겨찾기에 추가했어요':'즐겨찾기에서 뺐어요'); refresh(); }
+function toggleDone(id){
+  toggleIn(done,id); saveDone();
+  if(done.has(id)){ const n=done.size; toast(n===TRAILS.length?'🎉 50선 모두 완주! 대단해요':`✓ 완주 체크! (${n}/${TRAILS.length})`); }
+  else toast('완주 체크를 해제했어요');
+  refresh();
+}
+function refresh(){ const y=scrollY; render(); scrollTo(0,y); if(state.current){ const sy=$('#sheet').scrollTop; renderDetail(state.current); $('#sheet').scrollTop=sy; } }
+
+/* ---------- 지도 (Leaflet, 필요할 때만 로드) ---------- */
+let leafletP, mainMap, markerLayer, meMarker, lastFitKey = '', miniMap;
+const tileLayers = new Set();
+function loadLeaflet(){
+  if(window.L) return Promise.resolve(window.L);
+  if(leafletP) return leafletP;
+  leafletP = new Promise((res, rej) => {
+    const l = document.createElement('link'); l.rel='stylesheet'; l.href='vendor/leaflet/leaflet.css'; document.head.appendChild(l);
+    const sc = document.createElement('script'); sc.src='vendor/leaflet/leaflet.js';
+    sc.onload = () => res(window.L); sc.onerror = () => { leafletP=null; rej(new Error('leaflet')); };
+    document.head.appendChild(sc);
+  });
+  return leafletP;
+}
+const tileUrl = () => document.documentElement.dataset.theme==='dark'
+  ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+  : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+function addTiles(map){
+  const t = L.tileLayer(tileUrl(), {maxZoom:18, subdomains:'abcd',
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'});
+  t.addTo(map); tileLayers.add(t);
+  map.on('unload', () => tileLayers.delete(t));
+  return t;
+}
+function updateTiles(){ tileLayers.forEach(t => t.setUrl(tileUrl())); }
+function accentColor(){ return getComputedStyle(document.documentElement).getPropertyValue('--a').trim() || '#1f6b47'; }
+function pinIcon(t){
+  const cls = ['pin', fav.has(t.id)?'fav':'', done.has(t.id)?'done':'', t.geo==='approx'?'approx':''].join(' ');
+  return L.divIcon({className:'', html:`<div class="${cls}" style="--pc:${accentColor()}"><b></b><span>${t.level}</span></div>`, iconSize:[30,38], iconAnchor:[15,36], popupAnchor:[0,-32]});
+}
+function popupHTML(t){
+  const dist = state.pos ? ` · 📍 ${fmtDist(distKm(state.pos,t))}` : '';
+  return `<div class="pp"><h6>${esc(t.name)}</h6><div class="m">${esc(t.region)} · ${fmtKm(t.km)}km · Lv.${t.level} · ${fmtMins(t.mins)}${dist}</div>
+    <button data-open="${t.id}">상세 보기</button>${t.geo==='approx'?'<div class="ap">대략 위치</div>':''}</div>`;
+}
+async function drawMap(list){
+  let L_;
+  try{ L_ = await loadLeaflet(); }catch{ toast('지도를 불러오지 못했어요'); return; }
+  if(!mainMap){
+    mainMap = L_.map('map', {zoomControl:true, scrollWheelZoom:true}).setView([36.4,127.9], 7);
+    addTiles(mainMap);
+    markerLayer = L_.layerGroup().addTo(mainMap);
+    mainMap.getContainer().addEventListener('click', e => { const b=e.target.closest('[data-open]'); if(b) openDetail(+b.dataset.open); });
+  }
+  setTimeout(()=>mainMap.invalidateSize(), 0);
+  markerLayer.clearLayers();
+  list.forEach(t => L_.marker([t.lat,t.lng], {icon:pinIcon(t), title:t.name, riseOnHover:true}).bindPopup(popupHTML(t)).addTo(markerLayer));
+  drawMe();
+  const key = list.map(t=>t.id).join(',');
+  if(key !== lastFitKey){ lastFitKey = key; fitMap(list); }
+}
+function fitMap(list){
+  if(!mainMap) return;
+  const pts = (list||state.list).map(t=>[t.lat,t.lng]);
+  if(!pts.length) return;
+  if(pts.length===1) mainMap.setView(pts[0], 12); else mainMap.fitBounds(pts, {padding:[40,40], maxZoom:12});
+}
+function drawMe(){
+  if(!mainMap || !state.pos) return;
+  if(meMarker) meMarker.remove();
+  meMarker = L.marker([state.pos.lat,state.pos.lng], {icon:L.divIcon({className:'',html:'<div class="me-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]}), zIndexOffset:1000, title:'내 위치'}).bindPopup('내 위치').addTo(mainMap);
+}
+$('#mapFit').addEventListener('click', ()=>fitMap());
+$('#mapLocate').addEventListener('click', async ()=>{
+  if(await locate()){
+    drawMap(state.list);
+    const near = [...state.list].sort((a,b)=>distKm(state.pos,a)-distKm(state.pos,b)).slice(0,3);
+    mainMap.fitBounds([[state.pos.lat,state.pos.lng], ...near.map(t=>[t.lat,t.lng])], {padding:[50,50], maxZoom:11});
+  }
+});
+
+/* ---------- 내 위치 ---------- */
+function locate(){
+  return new Promise(res => {
+    if(!('geolocation' in navigator)){ toast('이 브라우저는 위치 기능을 지원하지 않아요'); return res(false); }
+    toast('내 위치를 확인하는 중…');
+    navigator.geolocation.getCurrentPosition(p => {
+      state.pos = {lat:p.coords.latitude, lng:p.coords.longitude};
+      toast('내 위치를 찾았어요'); res(true);
+    }, err => {
+      toast(err.code===1 ? '위치 권한이 거부됐어요. 브라우저 설정에서 허용해 주세요' : '위치를 가져오지 못했어요');
+      res(false);
+    }, {enableHighAccuracy:false, timeout:10000, maximumAge:600000});
+  });
+}
+
+/* ---------- 날씨 (Open-Meteo, API 키 불필요) ---------- */
+const WX = {0:['맑음','☀️'],1:['대체로 맑음','🌤️'],2:['구름 조금','⛅'],3:['흐림','☁️'],45:['안개','🌫️'],48:['안개','🌫️'],
+  51:['약한 이슬비','🌦️'],53:['이슬비','🌦️'],55:['강한 이슬비','🌧️'],56:['어는 이슬비','🌧️'],57:['어는 이슬비','🌧️'],
+  61:['약한 비','🌦️'],63:['비','🌧️'],65:['강한 비','🌧️'],66:['어는 비','🌧️'],67:['어는 비','🌧️'],
+  71:['약한 눈','🌨️'],73:['눈','🌨️'],75:['강한 눈','❄️'],77:['싸락눈','🌨️'],80:['소나기','🌦️'],81:['소나기','🌧️'],82:['강한 소나기','⛈️'],
+  85:['눈 소나기','🌨️'],86:['강한 눈 소나기','❄️'],95:['뇌우','⛈️'],96:['우박 동반 뇌우','⛈️'],99:['우박 동반 뇌우','⛈️']};
+const wxCache = new Map();
+async function getWeather(t){
+  const hit = wxCache.get(t.id);
+  if(hit && Date.now()-hit.at < 30*60*1000) return hit.data;
+  const u = `https://api.open-meteo.com/v1/forecast?latitude=${t.lat}&longitude=${t.lng}`
+    + `&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m`
+    + `&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
+    + `&timezone=Asia%2FSeoul&forecast_days=7&wind_speed_unit=ms`;
+  const r = await fetch(u); if(!r.ok) throw new Error('wx');
+  const data = await r.json(); wxCache.set(t.id, {at:Date.now(), data}); return data;
+}
+function wxHTML(w){
+  const c = w.current, [cn, ce] = WX[c.weather_code] || ['-','🌡️'];
+  const days = w.daily.time.map((d,i) => {
+    const dt = new Date(d+'T00:00:00'), dow = dt.getDay();
+    const name = i===0 ? '오늘' : i===1 ? '내일' : '일월화수목금토'[dow];
+    const [dn, de] = WX[w.daily.weather_code[i]] || ['-','·'];
+    const pr = w.daily.precipitation_probability_max?.[i];
+    return `<div class="wx-d${dow===0||dow===6?' we':''}" title="${dt.getMonth()+1}/${dt.getDate()} ${dn}">
+      <div class="dn">${name}</div><span class="e">${de}</span>
+      <span class="hi">${Math.round(w.daily.temperature_2m_max[i])}°</span> <span class="lo">${Math.round(w.daily.temperature_2m_min[i])}°</span>
+      ${pr!=null?`<div class="pr">☔${pr}%</div>`:''}</div>`;
+  }).join('');
+  return `<div class="wx-now"><span class="e">${ce}</span><div><b>${Math.round(c.temperature_2m)}°</b> ${cn}
+    <small>체감 ${Math.round(c.apparent_temperature)}° · 습도 ${c.relative_humidity_2m}% · 바람 ${c.wind_speed_10m}m/s</small></div></div>
+    <div class="wx-days">${days}</div>
+    <div class="geo-note">주말(토·일)은 강조 표시 · 숲길 위치 기준 예보 · 출처 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a></div>`;
+}
+async function loadWeather(t){
+  const box = $('#wxBox'); if(!box) return;
+  try{
+    const w = await getWeather(t);
+    if(state.current===t.id && $('#wxBox')) $('#wxBox').innerHTML = wxHTML(w);
+  }catch{
+    if(state.current===t.id && $('#wxBox')) $('#wxBox').innerHTML = `<div class="wx-msg">날씨 정보를 불러오지 못했어요. 인터넷 연결을 확인해 주세요. <button class="mini" data-wx-retry>다시 시도</button></div>`;
+  }
+}
+async function loadMiniMap(t){
+  if(miniMap){ miniMap.remove(); miniMap = null; }
+  const el = $('#miniMap'); if(!el) return;
+  try{ await loadLeaflet(); }catch{ el.textContent='지도를 불러오지 못했어요'; return; }
+  if(state.current!==t.id || !$('#miniMap')) return;
+  miniMap = L.map('miniMap', {zoomControl:true, scrollWheelZoom:false, dragging:!L.Browser.mobile, tap:false}).setView([t.lat,t.lng], t.geo==='exact'?14:12);
+  addTiles(miniMap);
+  L.marker([t.lat,t.lng], {icon:pinIcon(t)}).addTo(miniMap);
+  if(state.pos) L.marker([state.pos.lat,state.pos.lng], {icon:L.divIcon({className:'',html:'<div class="me-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(miniMap);
+}
+
+/* ---------- 상세 ---------- */
+let lastFocus, didPush = false;
+function openDetail(id, push=true){
+  const t = TRAILS.find(x=>x.id===id); if(!t) return;
+  state.current = id; lastFocus = document.activeElement;
+  mainMap?.closePopup();
+  renderDetail(id);
+  const ov = $('#overlay'); ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  $('#sheet').scrollTop = 0;
+  if(push && location.hash!=='#trail-'+id){ history.pushState({id},'', '#trail-'+id); didPush = true; }
+  if(matchMedia('(pointer:fine)').matches) setTimeout(()=>$('#sheet .close')?.focus(), 50);
+}
+function closeDetail(fromPop=false){
+  const ov=$('#overlay'); if(!ov.classList.contains('open')) return;
+  ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); document.body.style.overflow='';
+  state.current=null;
+  if(miniMap){ miniMap.remove(); miniMap=null; }
+  if(!fromPop && location.hash.startsWith('#trail-')){ if(didPush) history.back(); else history.replaceState(null,'',location.pathname+location.search); }
+  didPush = false;
+  lastFocus?.focus?.();
+}
+function stepDetail(dir){
+  const ids = state.list.length ? state.list.map(t=>t.id) : TRAILS.map(t=>t.id);
+  let i = ids.indexOf(state.current); if(i<0) i=0;
+  const next = ids[(i+dir+ids.length)%ids.length];
+  state.current = next; renderDetail(next); $('#sheet').scrollTop=0;
+  history.replaceState({id:next},'','#trail-'+next);
+}
+function srcLink(src){
+  if(!src) return '<span class="src">· 원자료</span>';
+  let host=''; try{ host = new URL(src).hostname.replace(/^(www|m)\./,''); }catch{}
+  return `<span class="src">· <a href="${esc(src)}" target="_blank" rel="noopener">출처 ${esc(host)}</a></span>`;
+}
+const clip = (x,n=80) => { x = String(x).replace(/\s+/g,' '); return x.length>n ? x.slice(0,n-2)+'…' : x; };
+function amenItem(label, arr){
+  const has = Array.isArray(arr) && arr.length;
+  const list = has ? [...arr].sort((a,b)=>(b.src?1:0)-(a.src?1:0)).slice(0,2) : [];
+  const txt = has ? list.map(x=>`<p>${esc(clip(x.t))}${srcLink(x.src)}</p>`).join('') : '확인된 정보가 없어요. 방문 전 지도·관리기관에 확인하세요.';
+  const neg = has && arr.every(x=>/불가|없음|어려움/.test(x.t));
+  return `<div class="am"><div class="h">${label}<span class="st${has&&!neg?' y':''}${neg?' n':''}">${neg?'어려움':has?'있음':'정보 없음'}</span></div>${has?txt:`<p>${txt}</p>`}</div>`;
+}
+function renderDetail(id){
+  const t = TRAILS.find(x=>x.id===id); const f=fav.has(id), d=done.has(id);
+  const addrQ = (t.start && t.start.addr) ? cleanAddr(t.start.addr) : cleanAddr(t.addr[0]);
+  const ids = state.list.length ? state.list.map(x=>x.id) : TRAILS.map(x=>x.id);
+  const pos = ids.indexOf(id);
+  $('#sheet').innerHTML = `
+  <div class="sheet-head">
+    <div class="grabber"></div>
+    <div class="meta"><span class="tag">${esc(t.region)}</span><span class="tag">${lvDots(t.level)} Lv.${t.level} ${LEVEL_LABEL[t.level]}</span>${d?'<span class="tag">✓ 완주</span>':''}</div>
+    <h2 id="dTitle">${esc(t.name)}</h2>
+    ${t.sub?`<div class="sub">${esc(t.sub)}</div>`:''}
+    <button class="icon-btn close" aria-label="닫기" data-close><svg class="i"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="sheet-body">
+    <div class="sheet-actions">
+      <button class="sa fav" data-d="fav" aria-pressed="${f}"><svg class="i"><use href="#i-star"/></svg>${f?'즐겨찾기됨':'즐겨찾기'}</button>
+      <button class="sa vis" data-d="done" aria-pressed="${d}"><svg class="i"><use href="#i-check"/></svg>${d?'다녀옴':'완주 체크'}</button>
+      <button class="sa" data-d="share"><svg class="i"><use href="#i-share"/></svg>공유</button>
+      <button class="sa" data-d="copy"><svg class="i"><use href="#i-copy"/></svg>정보 복사</button>
+    </div>
+    ${t.notice?t.notice.map(n=>`<div class="notice"><span>⚠️</span><div><b>방문 전 확인</b>${esc(n.t)}${srcLink(n.src)}</div></div>`).join(''):''}
+    <div>
+      <div class="facts">
+        <div class="fact"><span>노선 길이</span><b class="num">${fmtKm(t.km)}km</b>${t.kmNote?` <small>(${esc(t.kmNote)})</small>`:''}</div>
+        <div class="fact"><span>예상 소요</span><b class="num">${fmtMins(t.mins)}</b></div>
+        <div class="fact"><span>이용자레벨</span><b>${t.level} / 5</b></div>
+        <div class="fact"><span>${state.pos?'내 위치에서':'관리 기관'}</span><b style="font-size:${state.pos?16:13.5}px">${state.pos?'약 '+fmtDist(distKm(state.pos,t)):esc(t.org)}</b></div>
+      </div>
+      <div class="fact-note">⏱ 예상 소요는 노선 길이를 레벨별 평균 보행속도(시속 ${({1:3,2:2.7,3:2.4,4:2,5:1.8})[t.level]}km)로 나눈 참고값이에요. 휴식·왕복 여부에 따라 달라져요.${t.mins>480?' 하루에 다 걷기 어려운 길이라 구간을 나눠 걷는 걸 권해요.':''}</div>
+    </div>
+    ${t.tags.length?`<div class="tagrow">${t.tags.map(g=>`<span class="tg">#${esc(g)}</span>`).join('')}</div>`:''}
+    <div class="sec"><h4>숲길 안내</h4><p>${esc(t.desc)}</p></div>
+    <div class="sec"><h4>날씨 · 7일 예보</h4><div id="wxBox"><div class="skel"></div></div></div>
+    <div class="sec"><h4>편의 정보 <span style="font-weight:500">(원자료·웹 조사 기준, 2026년 11월)</span></h4>
+      <div class="amen">${amenItem('주차', t.parking)}${amenItem('화장실', t.toilet)}${amenItem('무장애(휠체어·유모차)', t.barrierFree)}</div>
+      <div class="map-quick">
+        <a class="mini" href="https://map.naver.com/p/search/${encodeURIComponent(addrQ+' 주차장')}" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>주변 주차장 찾기</a>
+        <a class="mini" href="https://map.naver.com/p/search/${encodeURIComponent(addrQ+' 화장실')}" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>주변 화장실 찾기</a>
+      </div>
+    </div>
+    ${t.links.length?`<div class="sec"><h4>지도 · 안내 링크</h4><div class="linklist">${t.links.map(l=>`
+      <a class="lk" href="${esc(l.url)}" target="_blank" rel="noopener"><svg class="i"><use href="#i-map"/></svg><span>${esc(l.label)}<small>${esc(l.url)}</small></span><svg class="i"><use href="#i-ext"/></svg></a>`).join('')}</div></div>`:''}
+    <div class="sec"><h4>위치</h4><div class="mini-map" id="miniMap"></div>
+      <div class="geo-note">${t.geo==='exact'?'원자료 지도 링크의 좌표예요.':t.geo==='sourced'?`관광 정보에 등록된 위치 좌표예요 ${srcLink(t.geoSrc)}`:'출발점 기준 대략 위치예요(오차가 있을 수 있어요). 정확한 길안내는 지도 링크를 이용하세요.'}</div>
+      ${t.start?`<div class="start-box"><span><b>출발점</b> ${esc(t.start.name)}${t.start.addr?`<br><small style="color:var(--ink2)">${esc(t.start.addr)}</small>`:''}</span>
+        <a class="mini" href="https://map.naver.com/p/search/${encodeURIComponent(t.start.addr||t.start.name)}" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>길찾기</a></div>`:''}</div>
+    <div class="sec"><h4>주소</h4><div class="addr-list">${t.addr.map(a=>`
+      <div class="addr-item"><span>${esc(a)}</span><button class="mini" data-copy="${esc(cleanAddr(a))}"><svg class="i"><use href="#i-copy"/></svg>복사</button></div>`).join('')}</div>
+      <div class="map-quick">
+        <a class="mini" href="https://map.naver.com/p/search/${encodeURIComponent(addrQ)}" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>네이버 지도로 검색</a>
+        <a class="mini" href="https://map.kakao.com/link/search/${encodeURIComponent(addrQ)}" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>카카오맵으로 검색</a>
+      </div>
+    </div>
+    <div class="sec"><h4>나의 메모</h4>
+      <textarea class="memo" id="memo" placeholder="함께 갈 사람, 주차 팁, 다녀온 날짜 등 자유롭게 적어 두세요.">${esc(memos[id]||'')}</textarea>
+      <div class="memo-hint" id="memoHint">이 기기에 자동 저장됩니다.</div>
+    </div>
+    <div class="nav-row">
+      <button class="btn" data-step="-1"><svg class="i"><use href="#i-left"/></svg>이전</button>
+      <span style="align-self:center;color:var(--ink3);font-size:13px" class="num">${pos+1} / ${ids.length}</span>
+      <button class="btn" data-step="1">다음<svg class="i"><use href="#i-right"/></svg></button>
+    </div>
+  </div>`;
+  loadWeather(t); loadMiniMap(t);
+  let mt; $('#memo').addEventListener('input', e=>{
+    clearTimeout(mt); mt=setTimeout(()=>{ const v=e.target.value.trim(); if(v) memos[id]=e.target.value; else delete memos[id]; saveMemos(); $('#memoHint').textContent='저장됨 ✓'; },300);
+  });
+}
+$('#overlay').addEventListener('click', e=>{
+  if(e.target.id==='overlay' || e.target.closest('[data-close]')) return closeDetail();
+  const id = state.current; const b = e.target.closest('[data-d],[data-copy],[data-step],[data-wx-retry]'); if(!b) return;
+  const t = TRAILS.find(x=>x.id===id);
+  if(b.dataset.step) return stepDetail(+b.dataset.step);
+  if(b.dataset.wxRetry!==undefined){ $('#wxBox').innerHTML='<div class="skel"></div>'; return loadWeather(t); }
+  if(b.dataset.copy) return copyText(b.dataset.copy,'주소를 복사했어요');
+  switch(b.dataset.d){
+    case 'fav': toggleFav(id); break;
+    case 'done': toggleDone(id); break;
+    case 'share': share(t.name, `${t.name} (${t.region} · ${fmtKm(t.km)}km) - 명품숲길 50선`, trailUrl(t)); break;
+    case 'copy': copyText(`[${t.name}${t.sub?' – '+t.sub:''}]\n지역: ${t.region} / 길이: ${fmtKm(t.km)}km / 예상 소요: ${fmtMins(t.mins)} / 이용자레벨: ${t.level}\n주소: ${t.addr.join(' / ')}\n${t.links.map(l=>l.label+': '+l.url).join('\n')}\n${trailUrl(t)}`, '숲길 정보를 복사했어요'); break;
+  }
+});
+// 모바일 바텀시트: 아래로 끌어서 닫기
+(() => {
+  let y0=null;
+  $('#sheet').addEventListener('touchstart', e=>{ if(e.target.closest('.sheet-head') && !e.target.closest('.leaflet-container') && $('#sheet').scrollTop<=0) y0=e.touches[0].clientY; }, {passive:true});
+  $('#sheet').addEventListener('touchmove', e=>{ if(y0==null) return; const dy=e.touches[0].clientY-y0; if(dy>0) $('#sheet').style.transform=`translateY(${dy}px)`; }, {passive:true});
+  $('#sheet').addEventListener('touchend', e=>{ if(y0==null) return; const dy=e.changedTouches[0].clientY-y0; $('#sheet').style.transform=''; y0=null; if(dy>110) closeDetail(); });
+})();
+
+/* 해시 라우팅 (#trail-12 로 바로 열기) */
+function fromHash(){
+  const m = location.hash.match(/^#trail-(\d+)$/);
+  if(m) openDetail(+m[1], false); else closeDetail(true);
+}
+addEventListener('popstate', fromHash);
+
+/* ---------- 기타 기능 ---------- */
+$('#randomBtn').addEventListener('click', ()=>{
+  const pool = (state.list.length ? state.list : TRAILS).filter(t=>!done.has(t.id));
+  const src = pool.length ? pool : (state.list.length?state.list:TRAILS);
+  const t = src[Math.floor(Math.random()*src.length)];
+  toast('🎲 오늘은 이 숲길 어때요?'); openDetail(t.id);
+});
+$('#exportBtn').addEventListener('click', ()=>{
+  closePops();
+  const data = {app:'trail50', version:1, exportedAt:new Date().toISOString(), fav:[...fav], done:[...done], memos};
+  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`숲길50선_내기록_${new Date().toISOString().slice(0,10)}.json`; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000); toast('백업 파일을 저장했어요');
+});
+$('#importBtn').addEventListener('click', ()=>{ closePops(); $('#importFile').click(); });
+$('#importFile').addEventListener('change', async e=>{
+  const file = e.target.files[0]; if(!file) return;
+  try{
+    const d = JSON.parse(await file.text());
+    if(d.app!=='trail50') throw 0;
+    (d.fav||[]).forEach(x=>fav.add(+x)); (d.done||[]).forEach(x=>done.add(+x)); memos = {...memos, ...(d.memos||{})};
+    saveFav(); saveDone(); saveMemos(); render(); toast('기록을 불러왔어요 (기존 기록과 합쳐짐)');
+  }catch{ toast('올바른 백업 파일이 아니에요'); }
+  e.target.value='';
+});
+$('#shareAppBtn').addEventListener('click', ()=>{ closePops(); share('명품숲길 50선','산림청 국토녹화 50주년 명품숲길 50선 탐방 가이드', location.origin+location.pathname); });
+$('#printBtn').addEventListener('click', ()=>{ closePops(); print(); });
+$('#clearBtn').addEventListener('click', ()=>{
+  closePops();
+  if(!confirm('즐겨찾기·완주 체크·메모를 모두 지울까요? 되돌릴 수 없어요.')) return;
+  fav.clear(); done.clear(); memos={}; saveFav(); saveDone(); saveMemos(); render(); toast('기록을 모두 지웠어요');
+});
+const topBtn = $('#topBtn');
+addEventListener('scroll', ()=>topBtn.classList.toggle('show', scrollY>600), {passive:true});
+topBtn.addEventListener('click', ()=>scrollTo({top:0,behavior:'smooth'}));
+
+/* 모바일에서는 짧은 검색 안내 */
+const setPh = () => $('#q').placeholder = innerWidth < 560 ? '숲길·지역 검색' : '숲길명·지역·주소·설명 검색 (초성도 OK: ㅅㄹㄴ)';
+setPh(); addEventListener('resize', setPh);
+/* ---------- 앱 설치 (PWA) ---------- */
+const UA = navigator.userAgent;
+const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const isIOS = /iPad|iPhone|iPod/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const isAndroid = /Android/i.test(UA);
+const isKakao = /KAKAOTALK/i.test(UA);
+const isInApp = isKakao || /NAVER\(inapp|Instagram|FBAN|FBAV|Line\/|everytimeApp|DaumApps|BAND\//i.test(UA);
+const isMobile = isIOS || isAndroid;
+let deferredPrompt = null;
+
+function canOfferInstall(){ return !isStandalone() && (deferredPrompt || isMobile || isInApp); }
+function syncInstallUI(){
+  const show = canOfferInstall();
+  $('#installBtn').hidden = !show;
+  $('#installMenu').hidden = !show;
+  if(!show) hideInstallBar();
+}
+function hideInstallBar(){ $('#installBar').hidden = true; document.body.classList.remove('has-ib'); }
+function maybeShowInstallBar(){
+  if(!isMobile && !isInApp) return;
+  if(isStandalone() || !canOfferInstall()) return;
+  const last = store.get('installDismissAt', 0);
+  if(Date.now() - last < 14*24*3600*1000) return;
+  $('#installBar').hidden = false; document.body.classList.add('has-ib');
+}
+async function doInstall(){
+  closePops();
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    const {outcome} = await deferredPrompt.userChoice.catch(()=>({outcome:'dismissed'}));
+    deferredPrompt = null;
+    if(outcome === 'accepted'){ hideInstallBar(); toast('설치를 시작했어요'); }
+    syncInstallUI();
+    return;
+  }
+  showGuide();
+}
+function showGuide(){
+  const here = location.href.split('#')[0];
+  let sub, body;
+  if(isInApp){
+    sub = '지금은 앱 안의 브라우저로 열려 있어요';
+    const ext = isKakao ? `kakaotalk://web/openExternal?url=${encodeURIComponent(here)}`
+      : isAndroid ? `intent://${here.replace(/^https?:\/\//,'')}#Intent;scheme=https;package=com.android.chrome;end` : '';
+    body = `<div class="guide-note">카카오톡·네이버·인스타그램 같은 앱 안의 브라우저에서는 홈 화면 설치가 되지 않아요. ${isIOS?'Safari':'Chrome'}로 열어서 설치해 주세요.</div>
+      ${ext?`<a class="btn" style="justify-content:center;background:var(--a);color:var(--surface);border-color:var(--a)" href="${esc(ext)}">${isIOS?'Safari':'Chrome'}로 열기</a>`:''}
+      <ol class="steps">
+        <li><span>화면 ${isIOS?'아래':'위'}의 <b>⋮ / 공유</b> 메뉴를 눌러요</span></li>
+        <li><span><b>다른 브라우저로 열기</b>${isIOS?' (Safari로 열기)':''}를 골라요</span></li>
+        <li><span>열린 브라우저에서 이 메뉴의 <b>앱으로 설치하기</b>를 다시 눌러요</span></li>
+      </ol>
+      <button class="btn" data-copy-url style="justify-content:center">주소 복사하기</button>`;
+  } else if(isIOS){
+    sub = 'iPhone · iPad (Safari 기준)';
+    body = `<ol class="steps">
+        <li><span>화면 아래(또는 주소창 옆)의 <b>공유</b> 버튼을 눌러요</span><svg class="i"><use href="#i-iosshare"/></svg></li>
+        <li><span>메뉴를 아래로 내려 <b>홈 화면에 추가</b>를 눌러요</span><svg class="i"><use href="#i-plussq"/></svg></li>
+        <li><span>오른쪽 위 <b>추가</b>를 누르면 끝!</span></li>
+      </ol>
+      <div class="guide-note">홈 화면의 🌲 숲길 50선 아이콘으로 열면 주소창 없이 앱처럼 실행되고, 한 번 본 내용은 인터넷이 없어도 볼 수 있어요. Chrome·Edge(iOS 16.4 이상)에서도 공유 메뉴로 같은 방법을 쓸 수 있어요.</div>`;
+  } else if(isAndroid){
+    sub = 'Android';
+    body = `<ol class="steps">
+        <li><span>브라우저 오른쪽 위(삼성 인터넷은 아래) <b>⋮ 또는 ≡</b> 메뉴를 눌러요</span></li>
+        <li><span><b>앱 설치</b> 또는 <b>홈 화면에 추가</b>를 눌러요</span><svg class="i"><use href="#i-plussq"/></svg></li>
+        <li><span><b>설치</b>를 누르면 앱 목록과 홈 화면에 생겨요</span></li>
+      </ol>
+      <div class="guide-note">메뉴에 설치 항목이 보이지 않으면 Chrome으로 열어 주세요.</div>`;
+  } else {
+    sub = 'PC';
+    body = `<ol class="steps">
+        <li><span>Chrome·Edge 주소창 오른쪽의 <b>설치</b> 아이콘을 누르거나, 메뉴 <b>⋮ → 저장 및 공유 → 앱 설치</b>를 골라요</span></li>
+        <li><span>Mac Safari는 <b>파일 → Dock에 추가</b>를 골라요</span></li>
+      </ol>`;
+  }
+  $('#guideSub').textContent = sub; $('#guideBody').innerHTML = body;
+  const ov = $('#guideOv'); ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+}
+function closeGuide(){ const ov=$('#guideOv'); ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); }
+$('#guideOv').addEventListener('click', e=>{
+  if(e.target.id==='guideOv' || e.target.closest('[data-guide-close]')) return closeGuide();
+  if(e.target.closest('[data-copy-url]')) copyText(location.href.split('#')[0], '주소를 복사했어요');
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeGuide(); });
+addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; syncInstallUI(); });
+addEventListener('appinstalled', () => { deferredPrompt = null; hideInstallBar(); syncInstallUI(); toast('🌲 앱이 설치됐어요! 홈 화면에서 열어 보세요'); });
+$('#installBtn').addEventListener('click', doInstall);
+$('#installMenu').addEventListener('click', doInstall);
+$('#installBarGo').addEventListener('click', doInstall);
+$('#installBarX').addEventListener('click', () => { store.set('installDismissAt', Date.now()); hideInstallBar(); });
+
+/* 서비스 워커 + 새 버전 알림 */
+if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')){
+  const hadCtrl = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if(!hadCtrl || $('.update-bar')) return;
+    const bar = document.createElement('div'); bar.className = 'update-bar'; bar.setAttribute('role','status');
+    bar.innerHTML = '새 버전이 준비됐어요 <button>새로고침</button>';
+    bar.querySelector('button').onclick = () => location.reload();
+    document.body.appendChild(bar);
+  });
+}
+
+/* 앱 바로가기(?tab=fav, ?view=map) */
+const sp = new URLSearchParams(location.search);
+if(['fav','done','todo'].includes(sp.get('tab'))) state.tab = sp.get('tab');
+if(sp.get('view')==='map') state.view = 'map';
+
+/* 시작 */
+applyTheme(); buildFilters(); render(); fromHash();
+syncInstallUI(); setTimeout(maybeShowInstallBar, 5000);
+})();
+</script>
+</body>
+</html>
